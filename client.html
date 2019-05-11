@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="img/dollar.jpg">
+  <title>Client | Inventory Manager</title>
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap-reset.css" rel="stylesheet">
+      <!--external css-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="DT_bootstrap.css" />
+  
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-----------My own links-->
+<link rel="stylesheet" href="mycss.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style-responsive.css">
+<link rel="stylesheet" href="datepicker.css" />
+        <link rel="stylesheet" type="text/css" href="daterangepicker-bs3.css" />
+        <link rel="stylesheet" type="text/css" href="datetimepicker.css" />
+        <link rel="stylesheet" type="text/css" href="multi-select.css" />
+        <link href="invoice-print.css" rel="stylesheet" media="print">
+        <link href="bootstrap-fullcalendar.css" rel="stylesheet">
+<style>
+
+
+ 
+</style>
+</head>
+<body>
+  <section id="container" class="">
+     <!--header start-->
+     <header class="header white-bg">
+        <div class="sidebar-toggle-box">
+            <div data-original-title="Toggle Navigation" data-placement="right" class="fa fa-dedent fa-bars tooltips"></div>
+
+        </div>
+          <!--logo start-->
+          <a href="home" class="logo">
+              <strong>CodeNet Inventory Manager                                                                                            </strong> 
+          </a>
+          <!--logo end-->
+          <div class="top-nav ">
+                     
+
+              <ul class="nav pull-right top-menu">
+                  <!-- user login dropdown start-->
+                  <li class="dropdown">
+                      <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                         <!--- <img alt="" src="uploads/favicon.png" width="21" height="23">-->
+                          <i class="fas fa-users"></i>
+                          <span class="username">admin</span>
+                          <b class="caret"></b>
+                      </a>
+                      <ul class="dropdown-menu extended logout">
+                          <div class="log-arrow-up"></div>
+                                                          <li><a href="profile"><i class=" fa fa-suitcase"></i> Profile </a></li>
+                           
+                              <li><a href="settings"><i class="fa fa-cog"></i>  Settings </a></li>
+                          
+                          <li><a><i class="fa fa-user"></i> admin</a></li>
+                          <li><a href="auth/logout"><i class="fa fa-key"></i>  Log Out </a></li>
+                      </ul>
+                  </li>
+                  <!-- user login dropdown end -->
+              </ul>
+          </div>
+     </header>
+     <!--header end-->
+            <!--sidebar start-->
+
+            <!--sidebar start-->
+            <aside>
+                <div id="sidebar"  class="nav-collapse ">
+                    <!-- sidebar menu start-->
+                    <ul class="sidebar-menu" id="nav-accordion">
+                        <li>
+                            <a href="home">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span> Dashboard </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="sale/addSaleView">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span> POS </span>
+                            </a>
+                        </li>
+
+
+
+
+
+                        <li class="sub-menu">
+                            <a href="javascript:;" >
+                                <i class="fa  fa-bars"></i>
+                                <span> Product </span>
+                            </a>
+                            <ul class="sub">
+                                <li><a  href="product"><i class="fa fa-bars"></i> Product List </a></li>
+                                <li><a  href="product/addProductView"><i class="fa fa-plus-circle"></i> Add Product </a></li>
+                                <li><a  href="product/productCategory"><i class="fa fa-star"></i> Product Category </a></li>
+                                <li><a  href="product/addCategoryView"><i class="fa fa-plus-circle"></i> Add Category </a></li>
+                            </ul>
+                        </li>
+
+
+                        <li><a  href="purchase"><i class="far fa-money-bill-alt"></i> Purchase </a></li>
+                        <li><a  href="sale"><i class="far fa-money-bill-alt"></i>Sale </a></li>
+                        <li class="sub-menu">
+                            <a href="javascript:;" >
+                                <i class="far fa-money-bill-alt"></i>
+                                <span> Expense </span>
+                            </a>
+                            <ul class="sub">
+
+                                <li><a  href="expense"><i class="far fa-money-bill-alt"></i> Expense </a></li>
+                                <li><a  href="expense/addExpenseView"><i class="far fa-money-bill-alt"></i> Add Expense </a></li>
+                                <li><a  href="expense/addExpensePayment"><i class="far fa-money-bill-alt"></i> Pay </a></li>
+                                <li><a  href="expense/expenseCategory"><i class="fa fa-plus-circle"></i> Category </a></li>
+                                <li><a  href="expense/expenseSubCategory"><i class="fa fa-plus-circle"></i> Sub Category </a></li>
+                            </ul>
+                        </li>
+
+
+
+
+                        <li class="sub-menu">
+                            <a href="javascript:;" >
+                                <i class="fas fa-chart-line"></i>
+                                <span> Report </span>
+                            </a>
+                            <ul class="sub">
+                                <li><a  href="purchase/supplierHistory"><i class="fa fa-user"></i> Supplier Report </a></li>
+                                <li><a  href="sale/clientHistory"><i class="fa fa-user"></i> Client Report </a></li>
+                                <li><a  href="expense/expenseHistory"><i class="far fa-money-bill-alt"></i> Expense Report </a></li>
+                                <li><a  href="product/productHistory"><i class="fa fa-bars"></i> Product Report </a></li>
+                                <li><a  href="home/todayhistory"><i class="fa fa-bars"></i> Today Report </a></li>
+                            </ul>
+                        </li> 
+
+
+
+                                                    
+                              <li class="sub-menu">
+                                <a href="javascript:;" >
+                                    <i class="far fa-money-bill-alt"></i>
+                                    <span> Loan </span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a  href="loan"><i class="fa fa-credit-card"></i> Loan </a></li>
+                                    <li><a  href="loan/loanee"><i class="fa fa-user"></i> Loanee </a></li>
+                                    <li><a  href="loan/lender"><i class="fa fa-user"></i> Lender </a></li>
+
+                                </ul>
+                            </li> 
+
+                            <li class="sub-menu">
+                                <a href="javascript:;" >
+                                    <i class="far fa-money-bill-alt"></i>
+                                    <span> Accounts </span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a  href="finance/capital"><i class="far fa-money-bill-alt"></i> Capital </a></li>
+                                    <li><a  href="loan"><i class="far fa-money-bill-alt"></i>Loan </a></li>
+                                    <li><a  href="finance/cashInBank"><i class="far fa-money-bill-alt"></i> Cash In Bank </a></li>
+                                    <li><a  href="finance/equity"><i class="far fa-money-bill-alt"></i> Equity </a></li>
+                                    <li><a  href="finance/profit"><i class="far fa-money-bill-alt"></i>Profit / Loss </a></li>
+                                </ul>
+                            </li> 
+                        
+                        
+                        
+
+                            <li><a  href="client"><i class="fa fa-user"></i> Client </a></li>
+                            <li><a  href="supplier"><i class="fa fa-user"></i> Supplier </a></li>
+                            <li><a  href="accountant"><i class="fa fa-user"></i> Staff </a></li>
+
+
+                          
+
+
+                            <li>
+                                <a href="settings" >
+                                    <i class="fas fa-cogs"></i>
+                                    <span>  Settings  </span>
+                                </a>
+                            </li>
+                        
+
+
+                        <li>
+                            <a href="profile" >
+                                <i class="fa fa-user"></i>
+                                <span>  Profile  </span>
+                            </a>
+                        </li>
+
+                        <!--multi level menu start-->
+
+                        <!--multi level menu end-->
+
+                    </ul>
+                    <!-- sidebar menu end-->
+                </div>
+            </aside>
+            <!--sidebar end-->
+
+   <!--sidebar end-->
+<!--main content start-->
+<section id="main-content">
+  <section class="wrapper site-min-height">
+      <!-- page start-->
+      <section class="panel">
+          <header class="panel-heading">
+              <i class="fa fa-user"></i>  Client            </header>
+          <div class="panel-body">
+              <div class="adv-table editable-table ">
+                  <div class="clearfix clearnew">
+                      <a data-toggle="modal" href="#myModal">
+                          <div class="btn-group">
+                              <button id="" class="btn green addbutton">
+                                 <i class="fa fa-plus-circle"></i>  Add Client 
+                              </button>
+                          </div>
+                      </a>
+                      <button class="export printme1" onclick="javascript:window.print();"> Print</button>  
+                  </div>
+                  <div class="space15"></div>
+                  <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                      <thead>
+                          <tr>
+                              <th> Image</th>
+                              <th> Name</th>
+                              <th> Email</th>
+                              <th> Address</th>
+                              <th> Phone</th>
+                              <th> Options</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                      <style>
+
+                          .img_url{
+                              height:20px;
+                              width:20px;
+                              background-size: contain; 
+                              max-height:20px;
+                              border-radius: 100px;
+                          }
+
+                      </style>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src="uploads/2499148420075342861925294971914520979714625N.jpg"></td>
+                              <td> haron</td>
+                              <td>alamranice47ru@gmail.com</td>
+                              <td class="center">0</td>
+                              <td>01740390336</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton mybtn" data-toggle="modal" data-id="286"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs mybtn" href="client/delete?id=286" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> Bharath</td>
+                              <td>kbharathca@gmail.com</td>
+                              <td class="center">GSTIN 12334557747     Tirupati</td>
+                              <td>7207446677</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton mybtn" data-toggle="modal" data-id="285"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs mybtn" href="client/delete?id=285" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> MR XYZ</td>
+                              <td>xyz@gmail.com</td>
+                              <td class="center">ctg BD</td>
+                              <td>0178927345</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton mybtn" data-toggle="modal" data-id="284"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs mybtn" href="client/delete?id=284" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> Swapnil Thakkar</td>
+                              <td>focusadvertisements@gmail.com</td>
+                              <td class="center"></td>
+                              <td>9904304755</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton mybtn" data-toggle="modal" data-id="282"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs mybtn" href="client/delete?id=282" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> deneme</td>
+                              <td>deneme@deneme.com</td>
+                              <td class="center">fdsfdsfdsfdsdfs</td>
+                              <td>432342342432324432342</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton mybtn" data-toggle="modal" data-id="281"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs mybtn" href="client/delete?id=281" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> contact@prix2gros.tn</td>
+                              <td>contact@prix2gros.tn</td>
+                              <td class="center">0</td>
+                              <td>51800666</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="280"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=280" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> dhisfjo gjpog</td>
+                              <td>kgffjjo@ijibgobfg.com</td>
+                              <td class="center"></td>
+                              <td>9967645036955</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="279"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=279" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> Santosh Kumar</td>
+                              <td>santosh@gmail.com</td>
+                              <td class="center">0</td>
+                              <td>9710876870</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="278"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=278" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> Khan sdk</td>
+                              <td>client4097@jadidgrain.com</td>
+                              <td class="center"></td>
+                              <td></td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="275"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=275" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> TING YEW CHUN</td>
+                              <td>jkshow8379@gmail.com</td>
+                              <td class="center">f4f2f2f</td>
+                              <td>234234</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="274"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=274" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> Arham Shahzad</td>
+                              <td>arhamshahzad118@gmail.com</td>
+                              <td class="center">0</td>
+                              <td>0501234567</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="272"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=272" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> asd sadasdadadad</td>
+                              <td>adad@adad.com</td>
+                              <td class="center">sadasdsadasdsadsdsad</td>
+                              <td>34324242442</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="268"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=268" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> Tipu Sultan</td>
+                              <td>wedran@gmail.com</td>
+                              <td class="center">0</td>
+                              <td>01521450823</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="267"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=267" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> Saleem Store</td>
+                              <td>saleem@eail.com</td>
+                              <td class="center">iqbal town</td>
+                              <td>03232818181</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="266"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=266" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> satyam</td>
+                              <td>nagasaiatmakuri@gmail.com</td>
+                              <td class="center">0</td>
+                              <td>8985165691</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="265"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=265" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> dineshj </td>
+                              <td>client6942@jadidgrain.com</td>
+                              <td class="center">0</td>
+                              <td></td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="263"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=263" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src="uploads/0.jpg"></td>
+                              <td> RIZWAN</td>
+                              <td>rizwan@yopmail.com</td>
+                              <td class="center">0</td>
+                              <td>8989898989</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="262"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=262" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src="uploads/parallax.png"></td>
+                              <td> Al Maida Protien Farm</td>
+                              <td>client1764@jadidgrain.com</td>
+                              <td class="center">Dhanote Lodhran</td>
+                              <td>03115888888</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="261"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=261" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> Event company 123</td>
+                              <td>client7931@jadidgrain.com</td>
+                              <td class="center"></td>
+                              <td></td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="260"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=260" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src="uploads/39385ab6382c3a970.jpg"></td>
+                              <td> ghnhn</td>
+                              <td>hnghnghn</td>
+                              <td class="center">hnghngh</td>
+                              <td>nghnghnghn</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="259"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=259" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> yboulhilat@gmail.com</td>
+                              <td>yboulhilat@gmail.com</td>
+                              <td class="center">0</td>
+                              <td>770318134</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="258"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=258" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src="uploads/tom.jpg"></td>
+                              <td> SARUL</td>
+                              <td>sarul@gmail.com</td>
+                              <td class="center"></td>
+                              <td>0111222333</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="257"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=257" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src="uploads/andrey.jpg"></td>
+                              <td> mwwwwww</td>
+                              <td>fixoundsinc@gmail.com</td>
+                              <td class="center"></td>
+                              <td>00002020220202</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="256"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=256" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src="uploads/sarah.jpg"></td>
+                              <td> antonio</td>
+                              <td>asdasdsdsd@dsadasdasd</td>
+                              <td class="center">fdskjfdsjkfjds sdsdsdsd sds sa dada ada adas dasdasdas d adasdsa dada das dafasf asfsaf sf s fsf sd </td>
+                              <td>12324234234</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="255"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=255" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> testtt</td>
+                              <td>client4085@jadidgrain.com</td>
+                              <td class="center">0</td>
+                              <td>54747478</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="254"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=254" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> CASH IN</td>
+                              <td>client6368@jadidgrain.com</td>
+                              <td class="center"></td>
+                              <td></td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="253"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=253" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> Mohit</td>
+                              <td>mohi@gmail.com</td>
+                              <td class="center">0</td>
+                              <td>7845985</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="252"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=252" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> crisp food </td>
+                              <td>ali@gmail.com</td>
+                              <td class="center">0</td>
+                              <td>3328287299</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="250"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=250" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> ewrewrew</td>
+                              <td>client9037@jadidgrain.com</td>
+                              <td class="center">0</td>
+                              <td>54353454364</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="249"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=249" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> ddfsd</td>
+                              <td>sdf@sfsf.gg</td>
+                              <td class="center">0</td>
+                              <td>54353454364</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="248"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=248" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> Testq2w1</td>
+                              <td>american@gmail.com</td>
+                              <td class="center">0</td>
+                              <td>12653498</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="247"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=247" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> Raqib</td>
+                              <td>raqib@test.com</td>
+                              <td class="center">mazar</td>
+                              <td>079929293</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="245"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=245" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> index.html</td>
+                              <td>admin@gmail.com</td>
+                              <td class="center">0</td>
+                              <td>1919228433</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="244"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=244" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src="uploads/index1.png"></td>
+                              <td> pankaj</td>
+                              <td>panakj@gmail.com</td>
+                              <td class="center">kondwa</td>
+                              <td>0123456789</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="243"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=243" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src="uploads/syiartube4.png"></td>
+                              <td> kecoa</td>
+                              <td>kecoa@bau.com</td>
+                              <td class="center">jl kecoa bau</td>
+                              <td>324322421</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="242"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=242" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> Marko Markovic</td>
+                              <td>client3722@jadidgrain.com</td>
+                              <td class="center">0</td>
+                              <td>065741654</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="241"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=241" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> Cliente Contado</td>
+                              <td>contado@terra.es</td>
+                              <td class="center">0</td>
+                              <td>657354123</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="240"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=240" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> Malaya</td>
+                              <td>malaya@yahoo.com</td>
+                              <td class="center">0</td>
+                              <td>09877766</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="239"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=239" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> Juan Perez</td>
+                              <td>lorem@lorem.cl</td>
+                              <td class="center">0</td>
+                              <td>1234465555</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="238"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=238" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src="uploads/lampada.png"></td>
+                              <td> test user name</td>
+                              <td>test@email.com</td>
+                              <td class="center">test Adress, street1</td>
+                              <td>712345678</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="237"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=237" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> Mosol</td>
+                              <td>client7284@jadidgrain.com</td>
+                              <td class="center">0</td>
+                              <td></td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="236"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=236" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> new715web@gmail.com</td>
+                              <td>new715web@gmail.com</td>
+                              <td class="center">0</td>
+                              <td>1111111111</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="235"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=235" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> tttttttt</td>
+                              <td>ttttttt</td>
+                              <td class="center">0</td>
+                              <td>ttttttttttt</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="234"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=234" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> احمد ابراهيم</td>
+                              <td>client1782@jadidgrain.com</td>
+                              <td class="center"></td>
+                              <td></td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="233"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=233" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> محمد احمد نجاح</td>
+                              <td>client5829@jadidgrain.com</td>
+                              <td class="center"></td>
+                              <td></td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="232"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=232" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> احمد محمد العجمي</td>
+                              <td>client5467@jadidgrain.com</td>
+                              <td class="center"></td>
+                              <td></td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="231"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=231" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> mohamed</td>
+                              <td>client371@jadidgrain.com</td>
+                              <td class="center">mansoura</td>
+                              <td>01023651254</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="230"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=230" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> Tolu Ogunjimi</td>
+                              <td>tolu@gmail.com</td>
+                              <td class="center">0</td>
+                              <td>081257872592</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="229"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=229" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> md shahin</td>
+                              <td>client8135@jadidgrain.com</td>
+                              <td class="center">0</td>
+                              <td></td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="228"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=228" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> md sohel</td>
+                              <td>client4463@jadidgrain.com</td>
+                              <td class="center">0</td>
+                              <td></td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="227"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=227" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> মো সহেল</td>
+                              <td>client7059@jadidgrain.com</td>
+                              <td class="center"></td>
+                              <td></td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="226"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=226" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> shan anwar</td>
+                              <td>client4330@jadidgrain.com</td>
+                              <td class="center">0</td>
+                              <td></td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="225"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=225" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src="uploads/228862793464943758121769102574892305214442N.png"></td>
+                              <td> CHIFN RO SINH</td>
+                              <td>KINH.OHHU@GMAIL.COM</td>
+                              <td class="center">1234 XINH DEENH BEJEAN</td>
+                              <td>98988777766</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="224"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=224" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src="uploads/2988f5c726f17181fc253a849f5aa734ea673d43.jpg"></td>
+                              <td> SUSHIL</td>
+                              <td>client9799@jadidgrain.com</td>
+                              <td class="center"></td>
+                              <td></td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="223"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=223" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> ewrwefewf</td>
+                              <td>sdfs@dgdf.dfsdf</td>
+                              <td class="center">sdsfsdf</td>
+                              <td>4534534</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="220"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=220" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> 23432</td>
+                              <td>423423</td>
+                              <td class="center">0</td>
+                              <td></td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="219"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=219" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> ARIF SALIM</td>
+                              <td>oman@gmail.com</td>
+                              <td class="center">0</td>
+                              <td>0096895079369</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="218"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=218" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> BCA09990</td>
+                              <td>client8705@jadidgrain.com</td>
+                              <td class="center">0</td>
+                              <td></td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="216"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=216" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> Jose Rondon</td>
+                              <td>Jose@mail.com</td>
+                              <td class="center">Nro 13 Street</td>
+                              <td>3351248</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="215"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=215" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> Reliance</td>
+                              <td>rla@reliance.com</td>
+                              <td class="center">0</td>
+                              <td>80774455</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="214"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=214" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> Shmal</td>
+                              <td>client1397@jadidgrain.com</td>
+                              <td class="center">0</td>
+                              <td></td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="213"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=213" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src="uploads/user4.png"></td>
+                              <td> nawjesh</td>
+                              <td>client3269@jadidgrain.com</td>
+                              <td class="center">0</td>
+                              <td>01515263960</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="212"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=212" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> Bin Laden</td>
+                              <td>binladen@hotmail.com</td>
+                              <td class="center">0</td>
+                              <td>78456932145</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="211"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=211" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src="uploads/198950018203447147965085683667954322195523N.jpg"></td>
+                              <td> Ali Raza</td>
+                              <td>ali@bingoit.co</td>
+                              <td class="center">Johar Town</td>
+                              <td>03222464648</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="210"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=210" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> nitinbalasaheb</td>
+                              <td>client2811@jadidgrain.com</td>
+                              <td class="center">0</td>
+                              <td></td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="209"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=209" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> rishikesh</td>
+                              <td>client2982@jadidgrain.com</td>
+                              <td class="center"></td>
+                              <td></td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="208"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=208" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> amarpreet</td>
+                              <td>amreet25@ymail.com</td>
+                              <td class="center">0</td>
+                              <td>8860821943</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="207"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=207" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> Rahul</td>
+                              <td>rj@gmail.com</td>
+                              <td class="center">calicut</td>
+                              <td>8281331623</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="206"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=206" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> 長空－台灣</td>
+                              <td>info@tw.com</td>
+                              <td class="center">2123/F, TW</td>
+                              <td>9879 987978</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="205"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=205" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> kkw  TW</td>
+                              <td>info@xx.com</td>
+                              <td class="center">112/F, NP</td>
+                              <td>6778 87655</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="204"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=204" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> new2017</td>
+                              <td>ps@radiuswifi.ru</td>
+                              <td class="center">123123</td>
+                              <td>123123</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="203"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=203" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> rajesh</td>
+                              <td>client4606@jadidgrain.com</td>
+                              <td class="center">0</td>
+                              <td>+918287948288</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="202"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=202" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src="uploads/17796590173544776498186897451079652815107N.jpg"></td>
+                              <td> mr cat</td>
+                              <td>cat@mr.com</td>
+                              <td class="center">cat Rd</td>
+                              <td>90874562</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="201"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=201" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> gfjhgfj</td>
+                              <td>fjhgfjhg</td>
+                              <td class="center">jhgfjhgf</td>
+                              <td>jhgfjhgf</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="200"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=200" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td style="width:10%;"><img style="width:95%;" src=""></td>
+                              <td> sdfgsdsdxdfsdfsdf</td>
+                              <td>sfg@gmai.com</td>
+                              <td class="center">werasdfasdf</td>
+                              <td>8888888888</td>
+                              <td>
+                                  <button type="button" class="btn btn-xs editbutton" data-toggle="modal" data-id="199"><i class="fa fa-edit"></i> Edit</button>   
+                                  <a class="btn btn-xs" href="client/delete?id=199" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                              </tbody>
+                  </table>
+              </div>
+          </div>
+      </section>
+      <!-- page end-->
+  </section>
+</section>
+<!--main content end-->
+<!--footer start-->
+
+
+
+
+<!-- Add Client Modal-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h4 class="modal-title"><i class="fa fa-plus-circle"></i>  Add Client</h4>
+          </div>
+          <div class="modal-body">
+              <form role="form" action="client/addNew" method="post" enctype="multipart/form-data">
+                  <div class="form-group">
+                      <label for="exampleInputEmail1"> Name</label>
+                      <input type="text" class="form-control" name="name" id="exampleInputEmail1" value=''>
+                  </div>
+                  <div class="form-group">
+                      <label for="exampleInputEmail1"> Email</label>
+                      <input type="text" class="form-control" name="email" id="exampleInputEmail1" value='' placeholder="">
+                  </div>
+                  <div class="form-group">
+                      <label for="exampleInputEmail1"> Address</label>
+                      <input type="text" class="form-control" name="address" id="exampleInputEmail1" value='' placeholder="">
+                  </div>
+                  <div class="form-group">
+                      <label for="exampleInputEmail1"> Phone</label>
+                      <input type="text" class="form-control" name="phone" id="exampleInputEmail1" value='' placeholder="">
+                  </div>
+                  <div class="form-group">
+                      <label for="exampleInputEmail1"> Image</label>
+                      <input type="file" name="img_url">
+                  </div>
+
+                  <input type="hidden" name="id" value=''>
+
+
+                  <button type="submit" name="submit" class="btn btn-info"> Submit</button>
+              </form>
+
+          </div>
+      </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+<!-- Add Client Modal-->
+
+
+
+
+
+
+
+<!-- Edit Event Modal-->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h4 class="modal-title"><i class="fa fa-edit"></i>  Edit Client</h4>
+          </div>
+          <div class="modal-body">
+              <form role="form" id="editClientForm" action="client/addNew" method="post" enctype="multipart/form-data">
+                  <div class="form-group">
+
+
+                      <label for="exampleInputEmail1"> Name</label>
+                      <input type="text" class="form-control" name="name" id="exampleInputEmail1" value='' placeholder="">
+
+                  </div>
+                  <div class="form-group">
+                      <label for="exampleInputEmail1"> Email</label>
+                      <input type="text" class="form-control" name="email" id="exampleInputEmail1" value='' placeholder="">
+                  </div>
+                  <div class="form-group">
+                      <label for="exampleInputEmail1"> Address</label>
+                      <input type="text" class="form-control" name="address" id="exampleInputEmail1" value='' placeholder="">
+                  </div>
+                  <div class="form-group">
+                      <label for="exampleInputEmail1"> Phone</label>
+                      <input type="text" class="form-control" name="phone" id="exampleInputEmail1" value='' placeholder="">
+                  </div>
+                  <div class="form-group">
+                      <label for="exampleInputEmail1"> Image</label>
+                      <input type="file" name="img_url">
+                  </div>
+
+                  <input type="hidden" name="id" value=''>
+
+
+                  <button type="submit" name="submit" class="btn btn-info"> Submit</button>
+              </form>
+
+          </div>
+      </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+<!-- Edit Event Modal-->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+                                      $(document).ready(function () {
+                                          $(".editbutton").click(function (e) {
+                                              e.preventDefault(e);
+                                              // Get the record's ID via attribute  
+                                              var iid = $(this).attr('data-id');
+                                              $('#editClientForm').trigger("reset");
+                                              $('#myModal2').modal('show');
+                                              $.ajax({
+                                                  url: 'client/editClientByJason?id=' + iid,
+                                                  method: 'GET',
+                                                  data: '',
+                                                  dataType: 'json',
+                                              }).success(function (response) {
+                                                  // Populate the form fields with the data returned from server
+                                                  $('#editClientForm').find('[name="id"]').val(response.client.id).end()
+                                                  $('#editClientForm').find('[name="name"]').val(response.client.name).end()
+                                                  $('#editClientForm').find('[name="password"]').val(response.client.password).end()
+                                                  $('#editClientForm').find('[name="email"]').val(response.client.email).end()
+                                                  $('#editClientForm').find('[name="address"]').val(response.client.address).end()
+                                                  $('#editClientForm').find('[name="phone"]').val(response.client.phone).end()
+                                              });
+                                          });
+                                      });
+</script>
+<script>
+  $(document).ready(function () {
+      $(".flashmessage").delay(3000).fadeOut(100);
+  });
+</script>
+
+
+                                              
+
+<footer class="site-footer">
+        <div class="text-center">
+            2019 &copy;  Inventory Management System  by Salum Jaabir.
+            <a href="https://codenetinventorymanager.netlify.com/sale#" class="go-top">
+                <i class="fa fa-angle-up"></i>
+            </a>
+        </div>
+    </footer>
+    <!--footer end-->
+    </section>
+<!-- js placed at the end of the document so the pages load faster -->
+<script src="jquery.js"></script>
+<script src="jquery-1.8.3.min.js"></script>
+<!----<script src="bootstrap.min.js"></script>-->
+<script src="jquery.scrollTo.min.js"></script>
+<!--
+<script src="common/js/jquery.nicescroll.js" type="text/javascript"></script>
+-->
+<script type="text/javascript" src="jquery.dataTables.js"></script>
+<script type="text/javascript" src="DT_bootstrap.js"></script>
+<script src="common/js/respond.min.js" ></script>
+<script type="text/javascript" src="bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="bootstrap-datetimepicker.js"></script>
+
+
+
+<script type="text/javascript" src="jquery.multi-select.js"></script>
+<script type="text/javascript" src="jquery.quicksearch.js"></script>
+<script type="text/javascript" src="ckeditor.js"></script>
+<script src="advanced-form-components.js"></script>
+<script src="jquery.cookie.js"></script>
+  <!--common script for all pages--> 
+  <script src="common-scripts.js"></script>
+  <script src="jquery.dcjqaccordion.2.7.js"></script>
+  <script src="fullcalendar.min.js"></script>
+  <script src="external-dragging-calendar.js"></script>
+  <!--script for this page only-->
+  <script src="editable-table.js"></script>
+  <!-- END JAVASCRIPTS -->
+  <script>
+    jQuery(document).ready(function () {
+    EditableTable.init();
+    });</script>
+
+<script>
+    $('#calender').fullCalendar()
+</script>
+
+<script>
+            $('.default-date-picker').datepicker({
+        format: 'mm/dd/yyyy'
+
+    });</script>
+
+<script>
+    $('.multi-select').multiSelect({
+    selectableHeader: "<input type='text' class='search-input' autocomplete='off' placeholder=' search...'>",
+            selectionHeader: "<input type='text' class='search-input' autocomplete='off' placeholder=''>",
+            afterInit: function (ms) {
+            var that = this,
+                    $selectableSearch = that.$selectableUl.prev(),
+                    $selectionSearch = that.$selectionUl.prev(),
+                    selectableSearchString = '#' + that.$container.attr('id') + ' .ms-elem-selectable:not(.ms-selected)',
+                    selectionSearchString = '#' + that.$container.attr('id') + ' .ms-elem-selection.ms-selected';
+            that.qs1 = $selectableSearch.quicksearch(selectableSearchString)
+                    .on('keydown', function (e) {
+                    if (e.which === 40) {
+                    that.$selectableUl.focus();
+                    return false;
+                    }
+                    });
+            that.qs2 = $selectionSearch.quicksearch(selectionSearchString)
+                    .on('keydown', function (e) {
+                    if (e.which == 40) {
+                    that.$selectionUl.focus();
+                    return false;
+                    }
+                    });
+            },
+            afterSelect: function () {
+            this.qs1.cache();
+            this.qs2.cache();
+            },
+            afterDeselect: function () {
+            this.qs1.cache();
+            this.qs2.cache();
+            }
+    });</script>
+
+<script>
+    $('#my_multi_select3').multiSelect()
+</script>
+
+</body>
+</html>
