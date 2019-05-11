@@ -218,7 +218,7 @@
   border-radius: 6px;
 }
 .mybtnc {
-  font-size: 30px;
+  font-size: 12px;
   background-color: rgb(248, 241, 241);
   font-weight: bold;
   padding: 5px;
@@ -254,4 +254,49 @@
 .editme {
   float: right;
 }
-
+.mybtn2 {
+  font-size: 25px;
+  background-color: teal;
+  font-weight: bold;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 4px !important;
+  color: #fff;
+  float: right;
+}
+.total_title {
+  display: inline-block;
+  margin: 27px;
+} 
+.total_title p {
+  font-size: 10px;
+  margin-bottom: 4px;
+}
+.payable {
+  background-color: rgb(73, 73, 73);
+  color: #fff;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 40px;
+  border-radius: 7px;
+} 
+.paid {
+  background-color: rgb(73, 73, 73);
+  color: #fff;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 40px;
+  border-radius: 7px;
+}
+.due_payable {
+  background-color: rgb(73, 73, 73);
+  color: #fff;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 40px;
+  border-radius: 7px;
+}
