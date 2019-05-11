@@ -254,3 +254,38 @@
 .editme {
   float: right;
 }
+.total_title {
+  display: inline-block;
+  margin: 40px;
+} 
+.total_title p {
+  font-size: 10px;
+  margin-bottom: 4px;
+}
+.payable {
+  background-color: rgb(73, 73, 73);
+  color: #fff;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 40px;
+  border-radius: 7px;
+} 
+.paid {
+  background-color: rgb(73, 73, 73);
+  color: #fff;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 40px;
+  border-radius: 7px;
+}
+.due_payable {
+  background-color: rgb(73, 73, 73);
+  color: #fff;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 40px;
+  border-radius: 7px;
+}
