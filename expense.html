@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="img/dollar.jpg">
+  <title>Expense | Inventory Manager</title>
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap-reset.css" rel="stylesheet">
+      <!--external css-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="DT_bootstrap.css" />
+  
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-----------My own links-->
+<link rel="stylesheet" href="mycss.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style-responsive.css">
+<link rel="stylesheet" href="datepicker.css" />
+        <link rel="stylesheet" type="text/css" href="daterangepicker-bs3.css" />
+        <link rel="stylesheet" type="text/css" href="datetimepicker.css" />
+        <link rel="stylesheet" type="text/css" href="multi-select.css" />
+        <link href="invoice-print.css" rel="stylesheet" media="print">
+        <link href="bootstrap-fullcalendar.css" rel="stylesheet">
+<style>
+
+
+ 
+</style>
+</head>
+<body>
+  <section id="container" class="">
+     <!--header start-->
+     <header class="header white-bg">
+        <div class="sidebar-toggle-box">
+            <div data-original-title="Toggle Navigation" data-placement="right" class="fa fa-dedent fa-bars tooltips"></div>
+
+        </div>
+          <!--logo start-->
+          <a href="" class="logo">
+              <strong>CodeNet Inventory Manager                                                                                            </strong> 
+          </a>
+          <!--logo end-->
+          <div class="top-nav ">
+                     
+
+              <ul class="nav pull-right top-menu">
+                  <!-- user login dropdown start-->
+                  <li class="dropdown">
+                      <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                         <!--- <img alt="" src="uploads/favicon.png" width="21" height="23">-->
+                          <i class="fas fa-users"></i>
+                          <span class="username">admin</span>
+                          <b class="caret"></b>
+                      </a>
+                      <ul class="dropdown-menu extended logout">
+                          <div class="log-arrow-up"></div>
+                                                          <li><a href="profile"><i class=" fa fa-suitcase"></i> Profile </a></li>
+                           
+                              <li><a href="settings"><i class="fa fa-cog"></i>  Settings </a></li>
+                          
+                          <li><a><i class="fa fa-user"></i> admin</a></li>
+                          <li><a href="auth/logout"><i class="fa fa-key"></i>  Log Out </a></li>
+                      </ul>
+                  </li>
+                  <!-- user login dropdown end -->
+              </ul>
+          </div>
+     </header>
+     <!--header end-->
+            <!--sidebar start-->
+
+            <!--sidebar start-->
+            <aside>
+                <div id="sidebar"  class="nav-collapse ">
+                    <!-- sidebar menu start-->
+                    <ul class="sidebar-menu" id="nav-accordion">
+                        <li>
+                            <a href="">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span> Dashboard </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="sale/addSaleView">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span> POS </span>
+                            </a>
+                        </li>
+
+
+
+
+
+                        <li class="sub-menu">
+                            <a href="javascript:;" >
+                                <i class="fa  fa-bars"></i>
+                                <span> Product </span>
+                            </a>
+                            <ul class="sub">
+                                <li><a  href="product"><i class="fa fa-bars"></i> Product List </a></li>
+                                <li><a  href="product/addProductView"><i class="fa fa-plus-circle"></i> Add Product </a></li>
+                                <li><a  href="product/productCategory"><i class="fa fa-star"></i> Product Category </a></li>
+                                <li><a  href="product/addCategoryView"><i class="fa fa-plus-circle"></i> Add Category </a></li>
+                            </ul>
+                        </li>
+
+
+                        <li><a  href="purchase"><i class="far fa-money-bill-alt"></i> Purchase </a></li>
+                        <li><a  href="sale"><i class="far fa-money-bill-alt"></i>Sale </a></li>
+                        <li class="sub-menu">
+                            <a href="javascript:;" >
+                                <i class="far fa-money-bill-alt"></i>
+                                <span> Expense </span>
+                            </a>
+                            <ul class="sub">
+
+                                <li><a  href="expense"><i class="far fa-money-bill-alt"></i> Expense </a></li>
+                                <li><a  href="expense/addExpenseView"><i class="far fa-money-bill-alt"></i> Add Expense </a></li>
+                                <li><a  href="expense/addExpensePayment"><i class="far fa-money-bill-alt"></i> Pay </a></li>
+                                <li><a  href="expense/expenseCategory"><i class="fa fa-plus-circle"></i> Category </a></li>
+                                <li><a  href="expense/expenseSubCategory"><i class="fa fa-plus-circle"></i> Sub Category </a></li>
+                            </ul>
+                        </li>
+
+
+
+
+                        <li class="sub-menu">
+                            <a href="javascript:;" >
+                                <i class="fas fa-chart-line"></i>
+                                <span> Report </span>
+                            </a>
+                            <ul class="sub">
+                                <li><a  href="purchase/supplierHistory"><i class="fa fa-user"></i> Supplier Report </a></li>
+                                <li><a  href="sale/clientHistory"><i class="fa fa-user"></i> Client Report </a></li>
+                                <li><a  href="expense/expenseHistory"><i class="far fa-money-bill-alt"></i> Expense Report </a></li>
+                                <li><a  href="product/productHistory"><i class="fa fa-bars"></i> Product Report </a></li>
+                                <li><a  href="home/todayhistory"><i class="fa fa-bars"></i> Today Report </a></li>
+                            </ul>
+                        </li> 
+
+
+
+                                                    
+                              <li class="sub-menu">
+                                <a href="javascript:;" >
+                                    <i class="far fa-money-bill-alt"></i>
+                                    <span> Loan </span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a  href="loan"><i class="fa fa-credit-card"></i> Loan </a></li>
+                                    <li><a  href="loan/loanee"><i class="fa fa-user"></i> Loanee </a></li>
+                                    <li><a  href="loan/lender"><i class="fa fa-user"></i> Lender </a></li>
+
+                                </ul>
+                            </li> 
+
+                            <li class="sub-menu">
+                                <a href="javascript:;" >
+                                    <i class="far fa-money-bill-alt"></i>
+                                    <span> Accounts </span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a  href="finance/capital"><i class="far fa-money-bill-alt"></i> Capital </a></li>
+                                    <li><a  href="loan"><i class="far fa-money-bill-alt"></i>Loan </a></li>
+                                    <li><a  href="finance/cashInBank"><i class="far fa-money-bill-alt"></i> Cash In Bank </a></li>
+                                    <li><a  href="finance/equity"><i class="far fa-money-bill-alt"></i> Equity </a></li>
+                                    <li><a  href="finance/profit"><i class="far fa-money-bill-alt"></i>Profit / Loss </a></li>
+                                </ul>
+                            </li> 
+                        
+                        
+                        
+
+                            <li><a  href="client"><i class="fa fa-user"></i> Client </a></li>
+                            <li><a  href="supplier"><i class="fa fa-user"></i> Supplier </a></li>
+                            <li><a  href="accountant"><i class="fa fa-user"></i> Staff </a></li>
+
+
+                          
+
+
+                            <li>
+                                <a href="settings" >
+                                    <i class="fas fa-cogs"></i>
+                                    <span>  Settings  </span>
+                                </a>
+                            </li>
+                        
+
+
+                        <li>
+                            <a href="profile" >
+                                <i class="fa fa-user"></i>
+                                <span>  Profile  </span>
+                            </a>
+                        </li>
+
+                        <!--multi level menu start-->
+
+                        <!--multi level menu end-->
+
+                    </ul>
+                    <!-- sidebar menu end-->
+                </div>
+            </aside>
+            <!--sidebar end-->
+
+
+
+            <!--sidebar end-->
+<!--main content start-->
+<section id="main-content">
+        <section class="wrapper site-min-height">
+            <!-- page start-->
+            <section class="panel">
+                    <header class="panel-heading">
+                            <i class="far fa-money-bill-alt"></i>    Expenses  Details 
+                        </header>
+                        <div class="panel-body">
+                                <div class="adv-table editable-table ">
+                                    <div class="clearfix new clearnew">
+                                            <a href="expense/addExpenseView">
+                                                <div class="btn-group">
+                                                    <button id="" class="btn green addbutton">
+                                                        <i class="fa fa-plus-circle"></i>  Add Expense 
+                                                    </button>
+                                                </div>
+                                            </a>
+                                            <a href="expense/addExpensePayment">
+                                                <div class="btn-group">
+                                                    <button id="" class="btn green addbutton">
+                                                        <i class="fa fa-plus-circle"></i>  Pay 
+                                                    </button>
+                                                </div>
+                                            </a>
+                         <button class="export printme1" onclick="javascript:window.print();"> Print </button>  
+                                    </div>
+                                    <div class="space15"></div>
+                                    <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                                        <thead>
+                                                <tr>
+                                                        <th> Date </th>
+                                                        <th> Category </th>
+                                                        <th> Sector </th>
+                                                        <th> Voucher No </th>
+                                                        <th> Note </th>
+                                                        <th> Paid </th>
+                                                        <th> Expensed </th>
+                                                        <th> Balance </th>
+                        
+                                                        <th class="option_th"> Options </th>
+                        
+                                                    </tr>
+                                        </thead>
+                                        <tbody>
+
+                                                <style>
+                        
+                                                    .img_url{
+                                                        height:20px;
+                                                        width:20px;
+                                                        background-size: contain; 
+                                                        max-height:20px;
+                                                        border-radius: 100px;
+                                                    }
+                        
+                                                </style>
+                        
+                                                                            <tr class="">
+                                                        <td> 21-02-2019</td>
+                                                        <td> Electricity</td>
+                                                        <td> </td>
+                                                        <td> 001</td>
+                                                        <td> sss</td>
+                                                        <td>₦ 550.00</td>
+                                                        <td></td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ 550.00</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpensePayment?id=170"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=170" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 21-02-2019</td>
+                                                        <td> Electricity</td>
+                                                        <td> test</td>
+                                                        <td> 001</td>
+                                                        <td> not</td>
+                                                        <td></td>
+                                                        <td>₦ 500.00</td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ 50.00</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpense?id=169"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=169" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 17-01-2019</td>
+                                                        <td> shaqaale</td>
+                                                        <td> labour</td>
+                                                        <td> dfdf</td>
+                                                        <td> </td>
+                                                        <td></td>
+                                                        <td>₦ </td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ 50.00</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpense?id=168"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=168" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 08-01-2019</td>
+                                                        <td> Electricity</td>
+                                                        <td> test</td>
+                                                        <td> 343</td>
+                                                        <td> sdfsdfs</td>
+                                                        <td></td>
+                                                        <td>₦ 3,434.00</td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -3,384.00</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpense?id=167"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=167" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 31-12-2018</td>
+                                                        <td> startup expense</td>
+                                                        <td> </td>
+                                                        <td> aczxk</td>
+                                                        <td> </td>
+                                                        <td>₦ 6,888.00</td>
+                                                        <td></td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ 3,504.00</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpensePayment?id=166"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=166" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 31-12-1969</td>
+                                                        <td> Dulal</td>
+                                                        <td> </td>
+                                                        <td> aczxk</td>
+                                                        <td> </td>
+                                                        <td></td>
+                                                        <td></td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ 3,504.00</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpense?id=165"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=165" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 31-12-2018</td>
+                                                        <td> startup expense</td>
+                                                        <td> </td>
+                                                        <td> aczxk</td>
+                                                        <td> floor mate for office </td>
+                                                        <td></td>
+                                                        <td>₦ 6,888.00</td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -3,384.00</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpense?id=164"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=164" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 30-12-2018</td>
+                                                        <td> shaqaale</td>
+                                                        <td> labour</td>
+                                                        <td> 969696</td>
+                                                        <td> shaqale la siiyay</td>
+                                                        <td></td>
+                                                        <td>₦ 200.00</td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -3,584.00</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpense?id=163"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=163" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 04-11-2018</td>
+                                                        <td> Electricity</td>
+                                                        <td> </td>
+                                                        <td> 15</td>
+                                                        <td> cost of electricity</td>
+                                                        <td>₦ 50.00</td>
+                                                        <td></td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -3,534.00</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpensePayment?id=162"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=162" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 04-11-2018</td>
+                                                        <td> Electricity</td>
+                                                        <td> </td>
+                                                        <td> 15</td>
+                                                        <td> cost of electricity</td>
+                                                        <td>₦ 50.00</td>
+                                                        <td></td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -3,484.00</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpensePayment?id=161"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=161" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 04-11-2018</td>
+                                                        <td> Electricity</td>
+                                                        <td> test</td>
+                                                        <td> 15</td>
+                                                        <td> cost of electricity</td>
+                                                        <td></td>
+                                                        <td>₦ 50.00</td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -3,534.00</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpense?id=160"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=160" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 26-10-2018</td>
+                                                        <td> Electricity</td>
+                                                        <td> </td>
+                                                        <td> 1</td>
+                                                        <td> nb</td>
+                                                        <td>₦ 199.00</td>
+                                                        <td></td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -3,335.00</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpensePayment?id=159"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=159" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 26-10-2018</td>
+                                                        <td> shaqaale</td>
+                                                        <td> test</td>
+                                                        <td> 1</td>
+                                                        <td> nb</td>
+                                                        <td></td>
+                                                        <td>₦ 1,000.00</td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -4,335.00</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpense?id=158"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=158" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 25-10-2018</td>
+                                                        <td> travelling allowance</td>
+                                                        <td> </td>
+                                                        <td> 140</td>
+                                                        <td> none</td>
+                                                        <td>₦ </td>
+                                                        <td></td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -4,335.00</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpensePayment?id=157"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=157" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 16-09-2018</td>
+                                                        <td> Electricity</td>
+                                                        <td> </td>
+                                                        <td> 4773</td>
+                                                        <td> test</td>
+                                                        <td></td>
+                                                        <td>₦ 32,223.00</td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -36,558.00</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpense?id=156"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=156" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 06-08-2018</td>
+                                                        <td> travelling allowance</td>
+                                                        <td> </td>
+                                                        <td> 7777</td>
+                                                        <td> -</td>
+                                                        <td>₦ 7,412.00</td>
+                                                        <td></td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -29,146.00</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpensePayment?id=155"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=155" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 03-07-2018</td>
+                                                        <td> Dulal</td>
+                                                        <td> </td>
+                                                        <td> 66666</td>
+                                                        <td> لايوجد</td>
+                                                        <td>₦ 500.00</td>
+                                                        <td></td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -28,646.00</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpensePayment?id=154"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=154" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 27-07-2018</td>
+                                                        <td> Dulal</td>
+                                                        <td> test</td>
+                                                        <td> 2</td>
+                                                        <td> </td>
+                                                        <td></td>
+                                                        <td>₦ 437.88</td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -29,083.88</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpense?id=153"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=153" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 28-06-2018</td>
+                                                        <td> travelling allowance</td>
+                                                        <td> </td>
+                                                        <td> 7777</td>
+                                                        <td> asad </td>
+                                                        <td></td>
+                                                        <td>₦ 1,200.00</td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -30,283.88</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpense?id=151"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=151" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 27-06-2018</td>
+                                                        <td> Dulal</td>
+                                                        <td> test</td>
+                                                        <td> 12236</td>
+                                                        <td> 32423</td>
+                                                        <td></td>
+                                                        <td>₦ 2,334.00</td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -32,617.88</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpense?id=150"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=150" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 16-05-2018</td>
+                                                        <td> Dulal</td>
+                                                        <td> labour</td>
+                                                        <td> 4521</td>
+                                                        <td> vood</td>
+                                                        <td></td>
+                                                        <td>₦ 120.00</td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -32,737.88</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpense?id=149"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=149" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 17-04-2018</td>
+                                                        <td> </td>
+                                                        <td> </td>
+                                                        <td> Qwerty</td>
+                                                        <td> </td>
+                                                        <td>₦ </td>
+                                                        <td></td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -32,737.88</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpensePayment?id=148"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=148" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 17-04-2018</td>
+                                                        <td> </td>
+                                                        <td> test</td>
+                                                        <td> Qwerty</td>
+                                                        <td> </td>
+                                                        <td></td>
+                                                        <td>₦ 100.00</td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -32,837.88</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpense?id=147"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=147" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 21-03-2018</td>
+                                                        <td> </td>
+                                                        <td> test</td>
+                                                        <td> 369</td>
+                                                        <td> </td>
+                                                        <td></td>
+                                                        <td>₦ 500.00</td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -33,337.88</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpense?id=146"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=146" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 16-02-2018</td>
+                                                        <td> </td>
+                                                        <td> </td>
+                                                        <td> n xnm</td>
+                                                        <td> kljxkjs</td>
+                                                        <td></td>
+                                                        <td>₦ </td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -33,337.88</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpense?id=145"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=145" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 04-01-2018</td>
+                                                        <td> </td>
+                                                        <td> </td>
+                                                        <td> 122332</td>
+                                                        <td> </td>
+                                                        <td></td>
+                                                        <td>₦ 5.00</td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -33,342.88</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpense?id=144"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=144" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 31-12-1969</td>
+                                                        <td> </td>
+                                                        <td> </td>
+                                                        <td> 122332</td>
+                                                        <td> </td>
+                                                        <td></td>
+                                                        <td>₦ 10.00</td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -33,352.88</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpense?id=143"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=143" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 03-01-2018</td>
+                                                        <td> </td>
+                                                        <td> </td>
+                                                        <td> 1</td>
+                                                        <td> JONS SALRY</td>
+                                                        <td></td>
+                                                        <td>₦ 10,000.00</td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -43,352.88</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpense?id=142"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=142" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 31-12-1969</td>
+                                                        <td> </td>
+                                                        <td> </td>
+                                                        <td> 333</td>
+                                                        <td> JOHN BILL</td>
+                                                        <td>₦ 1,500.00</td>
+                                                        <td></td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -41,852.88</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpensePayment?id=141"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=141" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 31-12-1969</td>
+                                                        <td> </td>
+                                                        <td> </td>
+                                                        <td> 333</td>
+                                                        <td> JOHN BILL</td>
+                                                        <td></td>
+                                                        <td>₦ 2,000.00</td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -43,852.88</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpense?id=140"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=140" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 04-12-2017</td>
+                                                        <td> </td>
+                                                        <td> </td>
+                                                        <td> 1122</td>
+                                                        <td> Electricity Bills</td>
+                                                        <td></td>
+                                                        <td>₦ 100.00</td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -43,952.88</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpense?id=139"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=139" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 14-11-2017</td>
+                                                        <td> </td>
+                                                        <td> </td>
+                                                        <td> V100</td>
+                                                        <td> Patially Paid</td>
+                                                        <td>₦ 200.00</td>
+                                                        <td></td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -43,752.88</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpensePayment?id=137"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=137" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 17-11-2017</td>
+                                                        <td> </td>
+                                                        <td> </td>
+                                                        <td> V100</td>
+                                                        <td> Salary Of Shyam</td>
+                                                        <td></td>
+                                                        <td>₦ 5,000.00</td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -48,752.88</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpense?id=135"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=135" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 18-11-2017</td>
+                                                        <td> </td>
+                                                        <td> </td>
+                                                        <td> 45</td>
+                                                        <td> Faltu</td>
+                                                        <td></td>
+                                                        <td>₦ 20.00</td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -48,772.88</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpense?id=134"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=134" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 18-11-2017</td>
+                                                        <td> </td>
+                                                        <td> </td>
+                                                        <td> 45</td>
+                                                        <td> Faltu</td>
+                                                        <td>₦ 50.00</td>
+                                                        <td></td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -48,722.88</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpensePayment?id=133"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=133" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 16-11-2017</td>
+                                                        <td> </td>
+                                                        <td> </td>
+                                                        <td> 1</td>
+                                                        <td> t</td>
+                                                        <td></td>
+                                                        <td>₦ 100.00</td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -48,822.88</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpense?id=132"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=132" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 16-09-2017</td>
+                                                        <td> </td>
+                                                        <td> </td>
+                                                        <td> 12344</td>
+                                                        <td> test</td>
+                                                        <td>₦ 1,000.00</td>
+                                                        <td></td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -47,822.88</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpensePayment?id=129"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=129" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 16-09-2017</td>
+                                                        <td> </td>
+                                                        <td> </td>
+                                                        <td> suisui</td>
+                                                        <td> aa</td>
+                                                        <td>₦ 1,000.00</td>
+                                                        <td></td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -46,822.88</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpensePayment?id=128"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=128" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 16-09-2017</td>
+                                                        <td> </td>
+                                                        <td> </td>
+                                                        <td> suisui</td>
+                                                        <td> tet</td>
+                                                        <td></td>
+                                                        <td>₦ 100,000.00</td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ -146,822.88</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpense?id=127"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=127" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 14-09-2017</td>
+                                                        <td> </td>
+                                                        <td> </td>
+                                                        <td> 23423423</td>
+                                                        <td> </td>
+                                                        <td>₦ 4,234,234.00</td>
+                                                        <td></td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ 4,087,411.12</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpensePayment?id=126"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=126" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>   Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 02-09-2017</td>
+                                                        <td> </td>
+                                                        <td> </td>
+                                                        <td> 12344</td>
+                                                        <td> 1234</td>
+                                                        <td>₦ 11,111.00</td>
+                                                        <td></td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ 4,098,522.12</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpensePayment?id=124"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=124" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>   Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                                            <tr class="">
+                                                        <td> 24-07-2017</td>
+                                                        <td> </td>
+                                                        <td> </td>
+                                                        <td> 44444</td>
+                                                        <td> dfsf</td>
+                                                        <td></td>
+                                                        <td>₦ 2,000.00</td>  
+                        
+                        
+                                                        
+                        
+                                                        <td> ₦ 4,096,522.12</td>  
+                        
+                        
+                                                        <td class="option">
+                                                            <a class="btn btn-xs mybtn" href="expense/editExpense?id=123"><i class="fa fa-edit"></i>  Edit</a>
+                                                            <a class="btn btn-xs mybtn" href="expense/deleteExpense?id=123" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>   Delete</a>
+                                                        </td>
+                        
+                                                    </tr>
+                                                
+                        
+                                                
+                                                <tr>
+                                                    <td class="medici_name total"></td>
+                                                    <td class="medici_name total"></td>
+                                                    <td class="medici_name total"></td>
+                                                    <td class="medici_name total"></td>
+                                                    <td class="medici_name total">Total</td>
+                                                    <td class="medici_name total">₦ 4,264,744.00</td>
+                                                    <td class="medici_name total">₦ 168,221.88</td>
+                                                    <td class="medici_name total">₦ 4,096,522.12</td>
+                                                    <td class="medici_name total option"></td>
+                                                </tr>
+                        
+                                                </tbody>
+                                    </table>
+                                    </div>
+                                </div>
+            </section>
+            <!-- page end-->
+        </section>
+</section>
+<!--main content end-->
+<!--footer start-->
+<footer class="site-footer">
+        <div class="text-center">
+            2019 &copy;  Inventory Management System  by Salum Jaabir.
+            <a href="http://wu-stock.rajbari-bazar.com/expense#" class="go-top">
+                <i class="fa fa-angle-up"></i>
+            </a>
+        </div>
+    </footer>
+    <!--footer end-->
+  </section>
+
+<!-- js placed at the end of the document so the pages load faster -->
+<script src="jquery.js"></script>
+<script src="jquery-1.8.3.min.js"></script>
+<!----<script src="bootstrap.min.js"></script>-->
+<script src="jquery.scrollTo.min.js"></script>
+<!--
+<script src="common/js/jquery.nicescroll.js" type="text/javascript"></script>
+-->
+<script type="text/javascript" src="jquery.dataTables.js"></script>
+<script type="text/javascript" src="DT_bootstrap.js"></script>
+<script src="common/js/respond.min.js" ></script>
+<script type="text/javascript" src="bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="bootstrap-datetimepicker.js"></script>
+
+
+
+<script type="text/javascript" src="jquery.multi-select.js"></script>
+<script type="text/javascript" src="jquery.quicksearch.js"></script>
+<script type="text/javascript" src="ckeditor.js"></script>
+<script src="advanced-form-components.js"></script>
+<script src="jquery.cookie.js"></script>
+  <!--common script for all pages--> 
+  <script src="common-scripts.js"></script>
+  <script src="jquery.dcjqaccordion.2.7.js"></script>
+  <script src="fullcalendar.min.js"></script>
+  <script src="external-dragging-calendar.js"></script>
+  <!--script for this page only-->
+  <script src="editable-table.js"></script>
+  <!-- END JAVASCRIPTS -->
+  <script>
+    jQuery(document).ready(function () {
+    EditableTable.init();
+    });</script>
+
+<script>
+    $('#calender').fullCalendar()
+</script>
+
+<script>
+            $('.default-date-picker').datepicker({
+        format: 'mm/dd/yyyy'
+
+    });</script>
+
+<script>
+    $('.multi-select').multiSelect({
+    selectableHeader: "<input type='text' class='search-input' autocomplete='off' placeholder=' search...'>",
+            selectionHeader: "<input type='text' class='search-input' autocomplete='off' placeholder=''>",
+            afterInit: function (ms) {
+            var that = this,
+                    $selectableSearch = that.$selectableUl.prev(),
+                    $selectionSearch = that.$selectionUl.prev(),
+                    selectableSearchString = '#' + that.$container.attr('id') + ' .ms-elem-selectable:not(.ms-selected)',
+                    selectionSearchString = '#' + that.$container.attr('id') + ' .ms-elem-selection.ms-selected';
+            that.qs1 = $selectableSearch.quicksearch(selectableSearchString)
+                    .on('keydown', function (e) {
+                    if (e.which === 40) {
+                    that.$selectableUl.focus();
+                    return false;
+                    }
+                    });
+            that.qs2 = $selectionSearch.quicksearch(selectionSearchString)
+                    .on('keydown', function (e) {
+                    if (e.which == 40) {
+                    that.$selectionUl.focus();
+                    return false;
+                    }
+                    });
+            },
+            afterSelect: function () {
+            this.qs1.cache();
+            this.qs2.cache();
+            },
+            afterDeselect: function () {
+            this.qs1.cache();
+            this.qs2.cache();
+            }
+    });</script>
+
+<script>
+    $('#my_multi_select3').multiSelect()
+</script>
+
+</body>
+</html>

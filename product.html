@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="img/dollar.jpg">
+  <title>Product | Inventory Manager</title>
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap-reset.css" rel="stylesheet">
+      <!--external css-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="DT_bootstrap.css" />
+  
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-----------My own links-->
+<link rel="stylesheet" href="mycss.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style-responsive.css">
+<link rel="stylesheet" href="datepicker.css" />
+        <link rel="stylesheet" type="text/css" href="daterangepicker-bs3.css" />
+        <link rel="stylesheet" type="text/css" href="datetimepicker.css" />
+        <link rel="stylesheet" type="text/css" href="multi-select.css" />
+        <link href="invoice-print.css" rel="stylesheet" media="print">
+        <link href="bootstrap-fullcalendar.css" rel="stylesheet">
+<style>
+
+
+ 
+</style>
+</head>
+<body>
+  <section id="container" class="">
+     <!--header start-->
+     <header class="header white-bg">
+        <div class="sidebar-toggle-box">
+            <div data-original-title="Toggle Navigation" data-placement="right" class="fa fa-dedent fa-bars tooltips"></div>
+
+        </div>
+          <!--logo start-->
+          <a href="" class="logo">
+              <strong>CodeNet Inventory Manager                                                                                            </strong> 
+          </a>
+          <!--logo end-->
+          <div class="top-nav ">
+                     
+
+              <ul class="nav pull-right top-menu">
+                  <!-- user login dropdown start-->
+                  <li class="dropdown">
+                      <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                         <!--- <img alt="" src="uploads/favicon.png" width="21" height="23">-->
+                          <i class="fas fa-users"></i>
+                          <span class="username">admin</span>
+                          <b class="caret"></b>
+                      </a>
+                      <ul class="dropdown-menu extended logout">
+                          <div class="log-arrow-up"></div>
+                                                          <li><a href="profile"><i class=" fa fa-suitcase"></i> Profile </a></li>
+                           
+                              <li><a href="settings"><i class="fa fa-cog"></i>  Settings </a></li>
+                          
+                          <li><a><i class="fa fa-user"></i> admin</a></li>
+                          <li><a href="auth/logout"><i class="fa fa-key"></i>  Log Out </a></li>
+                      </ul>
+                  </li>
+                  <!-- user login dropdown end -->
+              </ul>
+          </div>
+     </header>
+     <!--header end-->
+            <!--sidebar start-->
+
+            <!--sidebar start-->
+            <aside>
+                <div id="sidebar"  class="nav-collapse ">
+                    <!-- sidebar menu start-->
+                    <ul class="sidebar-menu" id="nav-accordion">
+                        <li>
+                            <a href="">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span> Dashboard </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="sale/addSaleView">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span> POS </span>
+                            </a>
+                        </li>
+
+
+
+
+
+                        <li class="sub-menu">
+                            <a href="javascript:;" >
+                                <i class="fa  fa-bars"></i>
+                                <span> Product </span>
+                            </a>
+                            <ul class="sub">
+                                <li><a  href="product"><i class="fa fa-bars"></i> Product List </a></li>
+                                <li><a  href="product/addProductView"><i class="fa fa-plus-circle"></i> Add Product </a></li>
+                                <li><a  href="product/productCategory"><i class="fa fa-star"></i> Product Category </a></li>
+                                <li><a  href="product/addCategoryView"><i class="fa fa-plus-circle"></i> Add Category </a></li>
+                            </ul>
+                        </li>
+
+
+                        <li><a  href="purchase"><i class="far fa-money-bill-alt"></i> Purchase </a></li>
+                        <li><a  href="sale"><i class="far fa-money-bill-alt"></i>Sale </a></li>
+                        <li class="sub-menu">
+                            <a href="javascript:;" >
+                                <i class="far fa-money-bill-alt"></i>
+                                <span> Expense </span>
+                            </a>
+                            <ul class="sub">
+
+                                <li><a  href="expense"><i class="far fa-money-bill-alt"></i> Expense </a></li>
+                                <li><a  href="expense/addExpenseView"><i class="far fa-money-bill-alt"></i> Add Expense </a></li>
+                                <li><a  href="expense/addExpensePayment"><i class="far fa-money-bill-alt"></i> Pay </a></li>
+                                <li><a  href="expense/expenseCategory"><i class="fa fa-plus-circle"></i> Category </a></li>
+                                <li><a  href="expense/expenseSubCategory"><i class="fa fa-plus-circle"></i> Sub Category </a></li>
+                            </ul>
+                        </li>
+
+
+
+
+                        <li class="sub-menu">
+                            <a href="javascript:;" >
+                                <i class="fas fa-chart-line"></i>
+                                <span> Report </span>
+                            </a>
+                            <ul class="sub">
+                                <li><a  href="purchase/supplierHistory"><i class="fa fa-user"></i> Supplier Report </a></li>
+                                <li><a  href="sale/clientHistory"><i class="fa fa-user"></i> Client Report </a></li>
+                                <li><a  href="expense/expenseHistory"><i class="far fa-money-bill-alt"></i> Expense Report </a></li>
+                                <li><a  href="product/productHistory"><i class="fa fa-bars"></i> Product Report </a></li>
+                                <li><a  href="home/todayhistory"><i class="fa fa-bars"></i> Today Report </a></li>
+                            </ul>
+                        </li> 
+
+
+
+                                                    
+                              <li class="sub-menu">
+                                <a href="javascript:;" >
+                                    <i class="far fa-money-bill-alt"></i>
+                                    <span> Loan </span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a  href="loan"><i class="fa fa-credit-card"></i> Loan </a></li>
+                                    <li><a  href="loan/loanee"><i class="fa fa-user"></i> Loanee </a></li>
+                                    <li><a  href="loan/lender"><i class="fa fa-user"></i> Lender </a></li>
+
+                                </ul>
+                            </li> 
+
+                            <li class="sub-menu">
+                                <a href="javascript:;" >
+                                    <i class="far fa-money-bill-alt"></i>
+                                    <span> Accounts </span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a  href="finance/capital"><i class="far fa-money-bill-alt"></i> Capital </a></li>
+                                    <li><a  href="loan"><i class="far fa-money-bill-alt"></i>Loan </a></li>
+                                    <li><a  href="finance/cashInBank"><i class="far fa-money-bill-alt"></i> Cash In Bank </a></li>
+                                    <li><a  href="finance/equity"><i class="far fa-money-bill-alt"></i> Equity </a></li>
+                                    <li><a  href="finance/profit"><i class="far fa-money-bill-alt"></i>Profit / Loss </a></li>
+                                </ul>
+                            </li> 
+                        
+                        
+                        
+
+                            <li><a  href="client"><i class="fa fa-user"></i> Client </a></li>
+                            <li><a  href="supplier"><i class="fa fa-user"></i> Supplier </a></li>
+                            <li><a  href="accountant"><i class="fa fa-user"></i> Staff </a></li>
+
+
+                          
+
+
+                            <li>
+                                <a href="settings" >
+                                    <i class="fas fa-cogs"></i>
+                                    <span>  Settings  </span>
+                                </a>
+                            </li>
+                        
+
+
+                        <li>
+                            <a href="profile" >
+                                <i class="fa fa-user"></i>
+                                <span>  Profile  </span>
+                            </a>
+                        </li>
+
+                        <!--multi level menu start-->
+
+                        <!--multi level menu end-->
+
+                    </ul>
+                    <!-- sidebar menu end-->
+                </div>
+            </aside>
+            <!--sidebar end-->
+
+
+
+            
+<!--sidebar end-->
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper site-min-height">
+        <!-- page start-->
+       <section class="panel">
+          <header class="panel-heading">
+              <i class="fa fa-bars"></i>    Product     </header>
+          <div class="panel-body">
+            <div class="adv-table editable-table ">
+              <div class="clearfix new clearnew">
+                   <a data-toggle="modal" href="#myModal" class="proleft">
+                       <div class="btn-group">
+                        <button id="" class="btn green addbutton">
+                                <i class="fa fa-plus-circle"></i>  Add Product  </button>
+                        </div>
+                    </a>
+        <a class="btn btn-xs export green printme" onclick="javascript:window.print();">  <i class="fa fa-print"> </i> Print </a>  
+                </div>
+                <div class="space15"></div>
+               <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                    <thead>
+                        <tr>
+                            <th> Name</th>
+                            <th> Code</th>
+                            <th> Category</th>
+                            <th> Cost</th>
+                            <th> Price</th>
+                            <!--
+                            <th> Unit</th>
+                            -->
+                            <th> Quantity</th>
+                            <th> Details</th>
+                            <th   class="option_th"> Options</th>
+                        </tr>
+                    </thead>
+                     <tbody>
+                        <style>
+
+                            .img_url{
+                                height:20px;
+                                width:20px;
+                                background-size: contain; 
+                                max-height:20px;
+                                border-radius: 100px;
+                            }
+
+                            .load{
+                                float: right !important;
+                            }
+
+                        </style>
+                       <tr class="">
+                         <td class="medici_name">Test</td>
+                         <td class="medici_name">1001</td>
+                         <td> CGRI</td>
+                         <td> Tshs  900</td>
+                         <td>Tshs 1000</td>
+                                <!--
+                                    <td> 0</td>
+                                       -->
+                         <td> 134 </td>
+                         <td class="center"><p>www.google.com</p></td>
+                           <td class="option">
+                             <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="233"><i class="fa fa-edit"></i>  Edit</a>   
+                               <a class="btn btn-xs mybtnp" href="product/delete?id=233&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a></td>
+                           </tr>
+                           <tr class="">
+                              <td class="medici_name">HP ELITEBOOK 2570p</td>
+                              <td class="medici_name">10</td>
+                              <td> Computers</td>
+                              <td> Tshs  60000</td>
+                              <td>Tshs 150000</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> 120
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="232"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=232&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                          <tr class="">
+                              <td class="medici_name">diap</td>
+                              <td class="medici_name">090</td>
+                              <td> Diass</td>
+                              <td> Tshs  900</td>
+                              <td>Tshs 1100</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> 4185.5
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="231"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=231&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                              </td>
+                          </tr>
+                          <tr class="">
+                              <td class="medici_name">fsdf</td>
+                              <td class="medici_name">fdsf</td>
+                              <td> CFF</td>
+                              <td> Tshs  fsdf</td>
+                              <td>Tshs fsdf</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> <p class="os">Stock Out</p>
+                              </td>
+                              <td class="center"><p>fsdfsdf</p></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="229"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=229&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                          <tr class="">
+                              <td class="medici_name">PRUEBA</td>
+                              <td class="medici_name">55</td>
+                              <td> CGRI</td>
+                              <td> Tshs  1</td>
+                              <td>Tshs 10</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> 206
+                              </td>
+                              <td class="center"><p>WWWW</p></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="224"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=224&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                              </td>
+                          </tr>
+                          <tr class="">
+                              <td class="medici_name">ÓLEO DIESEL</td>
+                              <td class="medici_name">3311237</td>
+                              <td> CGRI</td>
+                              <td> Tshs  2,985</td>
+                              <td>Tshs 2.878</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> 13036.85
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="223"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=223&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                          <tr class="">
+                              <td class="medici_name">TV NAS</td>
+                              <td class="medici_name">TV0023</td>
+                              <td> CGRI</td>
+                              <td> Tshs  250000</td>
+                              <td>Tshs 330000</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> 1
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="222"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=222&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                          <tr class="">
+                              <td class="medici_name">GAXETA</td>
+                              <td class="medici_name">GAXETA 12500250250</td>
+                              <td> Refrigerator </td>
+                              <td> Tshs  1.75</td>
+                              <td>Tshs 3.25</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> 183
+                              </td>
+                              <td class="center"><p>REPAIR</p></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="221"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=221&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                          <tr class="">
+                              <td class="medici_name">Rajabogam 05Kg</td>
+                              <td class="medici_name">RB 05</td>
+                              <td> CGRI</td>
+                              <td> Tshs  278.30</td>
+                              <td>Tshs 278.30</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> 10
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="218"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=218&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                          <tr class="">
+                              <td class="medici_name">Rajabogam 10Kg</td>
+                              <td class="medici_name">RB 10</td>
+                              <td> CGRI</td>
+                              <td> Tshs  551.25</td>
+                              <td>Tshs 551.25</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> 1073
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="217"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=217&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                          <tr class="">
+                              <td class="medici_name">Rajabogam 25Kg</td>
+                              <td class="medici_name">RB  25</td>
+                              <td> CGRI</td>
+                              <td> Tshs  1230</td>
+                              <td>Tshs 1230</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> 89
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="216"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=216&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                              </td>
+                          </tr>
+                          <tr class="">
+                              <td class="medici_name">Rajabogam (o) 25Kg</td>
+                              <td class="medici_name">RBO 25</td>
+                              <td> CGRI</td>
+                              <td> Tshs  1380</td>
+                              <td>Tshs 1380</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> 22
+                              </td>
+                              <td class="center"><p>Free 1Kg Basmati & Seeraga samba</p>
+</td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="214"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=214&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">Rajabogam IO 25Kg</td>
+                              <td class="medici_name">RBO I25</td>
+                              <td> CGRI</td>
+                              <td> Tshs  1319</td>
+                              <td>Tshs 1319</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> <p class="os">Stock Out</p>
+                              </td>
+                              <td class="center"><p>Free 2Kg VIP Idly </p>
+</td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="213"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=213&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">Rajabogam New Blue 25Kg</td>
+                              <td class="medici_name">facewash101</td>
+                              <td> CGRI</td>
+                              <td> Tshs  1200</td>
+                              <td>Tshs 1200</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> 1
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="212"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=212&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">Bagubali BPT 25Kg </td>
+                              <td class="medici_name">RBPT 25</td>
+                              <td> CGRI</td>
+                              <td> Tshs  1200</td>
+                              <td>Tshs 1265</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> 96
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="211"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=211&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">Spl Idlykar 01Kg</td>
+                              <td class="medici_name">IKR 01</td>
+                              <td> CGRI</td>
+                              <td> Tshs  33</td>
+                              <td>Tshs 33</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> <p class="os">Stock Out</p>
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="210"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=210&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">Spl Idlykar 05</td>
+                              <td class="medici_name">IKR 05</td>
+                              <td> CFF</td>
+                              <td> Tshs  165</td>
+                              <td>Tshs 165</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> <p class="os">Stock Out</p>
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="209"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=209&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">Spl Idlykar 10Kg</td>
+                              <td class="medici_name">IKR 10</td>
+                              <td> CFF</td>
+                              <td> Tshs  330</td>
+                              <td>Tshs 330</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> 597
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="207"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=207&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">Spl Idlykar 25Kg</td>
+                              <td class="medici_name">IKR 25</td>
+                              <td> CFF</td>
+                              <td> Tshs  825</td>
+                              <td>Tshs 825</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> 124
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="206"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=206&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">Kranthikar 01Kg</td>
+                              <td class="medici_name">KKR 01</td>
+                              <td> CFF</td>
+                              <td> Tshs  42</td>
+                              <td>Tshs 42</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> 136
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="205"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=205&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">Kranthikar 05Kg</td>
+                              <td class="medici_name">KKR 05</td>
+                              <td> CFF</td>
+                              <td> Tshs  210</td>
+                              <td>Tshs 210</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> 188
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="204"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=204&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">Kranthikar 10Kg</td>
+                              <td class="medici_name">KKR 10</td>
+                              <td> CFF</td>
+                              <td> Tshs  420</td>
+                              <td>Tshs 420</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> <p class="os">Stock Out</p>
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="201"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=201&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">Kranthikar 25Kg</td>
+                              <td class="medici_name">KKR 25</td>
+                              <td> CFF</td>
+                              <td> Tshs  1050</td>
+                              <td>Tshs 1050</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> <p class="os">Stock Out</p>
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="200"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=200&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">Gramiyam IR20 01Kg</td>
+                              <td class="medici_name">GRIR20 01</td>
+                              <td> CFF</td>
+                              <td> Tshs  31.4</td>
+                              <td>Tshs 31.4</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> <p class="os">Stock Out</p>
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="199"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=199&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">Gramiyam IR20 05Kg</td>
+                              <td class="medici_name">GRIR20 05</td>
+                              <td> CFF</td>
+                              <td> Tshs  157</td>
+                              <td>Tshs 157</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> 12
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="197"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=197&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">Gramiyam IR20 10Kg</td>
+                              <td class="medici_name">GRIR20 10</td>
+                              <td> CFF</td>
+                              <td> Tshs  314</td>
+                              <td>Tshs 314</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> <p class="os">Stock Out</p>
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp"  data-toggle="modal" data-id="196"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=196&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">Gramiyam IR20 25Kg</td>
+                              <td class="medici_name">GRIR20 25</td>
+                              <td> CFF</td>
+                              <td> Tshs  785</td>
+                              <td>Tshs 785</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> <p class="os">Stock Out</p>
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="195"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=195&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">C-Force</td>
+                              <td class="medici_name">2002</td>
+                              <td> Medicine</td>
+                              <td> Tshs  4100</td>
+                              <td>Tshs 4750</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> <p class="os">Stock Out</p>
+                              </td>
+                              <td class="center"><p>Vit. C     Ushaz Pharma</p>
+</td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="192"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=192&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">Lisovit</td>
+                              <td class="medici_name">2001</td>
+                              <td> Hello</td>
+                              <td> Tshs  5700</td>
+                              <td>Tshs 6200</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> <p class="os">Stock Out</p>
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="191"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=191&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">Jucie</td>
+                              <td class="medici_name">Code No1</td>
+                              <td> Vegetable Frut</td>
+                              <td> Tshs  90</td>
+                              <td>Tshs 100</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> <p class="os">Stock Out</p>
+                              </td>
+                              <td class="center"><p>Jucie</p>
+</td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="189"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=189&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">aaaa</td>
+                              <td class="medici_name">1212</td>
+                              <td> MZ45 </td>
+                              <td> Tshs  3333</td>
+                              <td>Tshs 3333</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> <p class="os">Stock Out</p>
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="186"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=186&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">Olivie Power 30x, 250ml</td>
+                              <td class="medici_name">01470258</td>
+                              <td> Foods</td>
+                              <td> Tshs  83.40</td>
+                              <td>Tshs 119.90</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> <p class="os">Stock Out</p>
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="185"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=185&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">Beauty Products</td>
+                              <td class="medici_name">123</td>
+                              <td> MZ45 </td>
+                              <td> Tshs  100</td>
+                              <td>Tshs 140</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> <p class="os">Stock Out</p>
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="184"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=184&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">fgsg</td>
+                              <td class="medici_name">iowf</td>
+                              <td> Coat</td>
+                              <td> Tshs  34</td>
+                              <td>Tshs 453</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> <p class="os">Stock Out</p>
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="183"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=183&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">Carlos</td>
+                              <td class="medici_name">ZL 1200W</td>
+                              <td> Medicine</td>
+                              <td> Tshs  9500</td>
+                              <td>Tshs 10500</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> <p class="os">Stock Out</p>
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="182"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=182&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">Stavic-SDR1000</td>
+                              <td class="medici_name">SDR1000</td>
+                              <td> MZ45 </td>
+                              <td> Tshs  2500</td>
+                              <td>Tshs 3000</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> <p class="os">Stock Out</p>
+                              </td>
+                              <td class="center"><p>Stavic-SDR1000 description</p>
+</td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="179"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=179&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">Home Power</td>
+                              <td class="medici_name">Compx-Hompower 8+8</td>
+                              <td> UPS/Inverter </td>
+                              <td> Tshs  9600</td>
+                              <td>Tshs 10600</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> <p class="os">Stock Out</p>
+                              </td>
+                              <td class="center"><p>8+8, Made in China</p>
+</td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="178"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=178&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">HOMEAGE (1012)`</td>
+                              <td class="medici_name">ups</td>
+                              <td> MZ45 </td>
+                              <td> Tshs  12</td>
+                              <td>Tshs 15</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> <p class="os">Stock Out</p>
+                              </td>
+                              <td class="center"><p>FRGRGR</p>
+</td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="177"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=177&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i>  Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">ertgey</td>
+                              <td class="medici_name">123</td>
+                              <td> MZ45 </td>
+                              <td> Tshs  </td>
+                              <td>Tshs </td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> <p class="os">Stock Out</p>
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="175"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=175&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">Inverex</td>
+                              <td class="medici_name">APT1000B</td>
+                              <td> Stabilizer</td>
+                              <td> Tshs  3200</td>
+                              <td>Tshs 3600</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> <p class="os">Stock Out</p>
+                              </td>
+                              <td class="center"><p>Stabilizer 150w - 260w</p><p>Made in China</p>
+                            </td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="174"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=174&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a></td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="medici_name">Cabbage</td>
+                              <td class="medici_name">V0956T01</td>
+                              <td> Vegetable Frut</td>
+                              <td> Tshs  100</td>
+                              <td>Tshs 200</td>
+                              <!--
+                              <td> 0</td>
+                              -->
+                              <td> <p class="os">Stock Out</p>
+                              </td>
+                              <td class="center"></td>
+                              <td class="option">
+                                  <a class="btn btn-xs editbuttonn mybtnp" data-toggle="modal" data-id="159"><i class="fa fa-edit"></i>  Edit</a>   
+                                  <a class="btn btn-xs mybtnp" href="product/delete?id=159&type=" onclick="return confirm('Are you sure you want to delete this item?');"><i class="far fa-trash-alt"></i> Delete</a>
+                              </td>
+                          </tr>  
+                     </tbody>
+                </table>
+            </div>
+          </div>   
+       </section>
+    </section>
+</section>
+<!--footer start-->
+<style>
+    .note{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    #cke_1_contents{
+        height: 88px !important;
+    }
+
+    #cke_2_contents{
+        height: 88px !important;
+    }
+    .modal-body{
+        padding: 0px;
+    }
+
+</style>
+<!-- Add Accountant Modal-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title"><i class="fa fa-plus-circle"></i>  Add Product</h4>
+            </div>
+            <div class="modal-body adduct">
+                <form class="promodal" role="form" id="" action="product/addNewProduct" method="post" enctype="multipart/form-data">
+
+                    <div class="col-md-6" id="mustfloat">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1"> Product Code</label>
+                            <input type="text" class="form-control" name="code" id="exampleInputEmail1" value='' placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1"> Product Name</label>
+                            <input type="text" class="form-control" name="name" id="exampleInputEmail1" value='' placeholder="">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1"> Product Category</label>
+                            <select class="form-control m-bot15" name="category" value=''>
+                                                                    <option value="CGRI"  > CGRI </option>
+                                                                            <option value="CFF"  > CFF </option>
+                                                                            <option value="Tori-4"  > Tori-4 </option>
+                                                                            <option value="Refrigerator "  > Refrigerator  </option>
+                                                                            <option value="carne"  > carne </option>
+                                                                            <option value="Diass"  > Diass </option>
+                                                                            <option value="Computers"  > Computers </option>
+                                                                            <option value="r6r6r6r6"  > r6r6r6r6 </option>
+                                         
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6" id="justfloat">
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1"> Product Cost</label>
+                            <input type="text" class="form-control" name="cost" id="exampleInputEmail1" value='' placeholder="">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1"> Product Price</label>
+                            <input type="text" class="form-control" name="price" id="exampleInputEmail1" value='' placeholder="">
+                        </div>
+                        <!--
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1"> Product Unit</label>
+                            <input type="text" class="form-control" name="unit" id="exampleInputEmail1" value='' placeholder="">
+                        </div>
+                        -->
+
+
+                        
+                    </div>
+
+
+                    <div class="col-md-12" id="blockpro">
+                        <div class="form-group">
+                            <label class="control-label col-md-3 note">Product Details</label>
+                            <div class="col-md-12 note">
+                                <textarea class="ckeditor form-control" name="details" value="" rows="5"></textarea>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <button type="submit" name="submit" class="btn btn-info batani"> Submit</button>
+                        </div>
+                    </div>
+
+
+                </form>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+<!-- Add Accountant Modal-->
+
+<!-- Edit Event Modal-->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title"><i class="fa fa-edit"></i>  Edit Product</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form" id="editProductForm" action="product/addNewProduct" method="post" enctype="multipart/form-data">
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1"> Product Code</label>
+                            <input type="text" class="form-control" name="code" id="exampleInputEmail1" value='200' placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1"> Product Name</label>
+                            <input type="text" class="form-control" name="name" id="exampleInputEmail1" value='Cabbage' placeholder="">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1"> Product Category</label>
+                            <select class="form-control m-bot15" name="category" value=''>
+                                                                    <option value="CGRI"  > CGRI </option>
+                                                                            <option value="CFF"  > CFF </option>
+                                                                            <option value="Tori-4"  > Tori-4 </option>
+                                                                            <option value="Refrigerator "  > Refrigerator  </option>
+                                                                            <option value="carne"  > carne </option>
+                                                                            <option value="Diass"  > Diass </option>
+                                                                            <option value="Computers"  > Computers </option>
+                                                                            <option value="r6r6r6r6"  > r6r6r6r6 </option>
+                                         
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1"> Product Cost</label>
+                            <input type="text" class="form-control" name="cost" id="exampleInputEmail1" value='100' placeholder="">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1"> Product Price</label>
+                            <input type="text" class="form-control" name="price" id="exampleInputEmail1" value='200' placeholder="">
+                        </div>
+
+                        <!--
+                        <div class="form-group">
+                            <label for="exampleInputEmail1"> Product Unit</label>
+                            <input type="text" class="form-control" name="unit" id="exampleInputEmail1" value='' placeholder="">
+                        </div>
+                        -->
+
+
+                    </div>
+
+
+                    <div class="col-md-12"> 
+                        <div class="form-group">
+                            <label class="control-label col-md-3 note">Product Details</label>
+                            <div class="col-md-12 note">
+                                <textarea class="ckeditor form-control" name="details" value="" rows="5"></textarea>
+                            </div>
+                        </div>
+
+                        
+                        <input type="hidden" name="id" value='159'>
+                        <div class="form-group">
+                            <button type="submit" name="submit" class="btn btn-info"> Submit</button>
+                        </div>
+                    </div>
+
+
+                </form>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+<!-- Edit Event Modal-->
+
+<!-- Load Product -->
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title"><i class="fa fa-edit"></i>  Load Product</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form" id="editProductForm" action="product/load" method="post" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"> Add Quantity</label>
+                        <input type="text" class="form-control" name="qty" id="exampleInputEmail1" value='' placeholder="">
+                    </div>
+
+                    <input type="hidden" name="id" value=''>
+                    <button type="submit" name="submit" class="btn btn-info"> Submit</button>
+                </form>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+<!-- Load Product -->
+
+
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+                       $(document).ready(function () {
+                                        $(".editbuttonn").click(function (e) {
+                                            e.preventDefault(e);
+                                            // Get the record's ID via attribute  
+                                            var iid = $(this).attr('data-id');
+                                            $('#editProductForm').trigger("reset");
+                                            $('#myModal2').modal('show');
+                                            $.ajax({
+                                                url: 'product/editProductByJason?id=' + iid,
+                                                method: 'GET',
+                                                data: '',
+                                                dataType: 'json',
+                                            }).success(function (response) {
+                                                // Populate the form fields with the data returned from server
+                                                $('#editProductForm').find('[name="id"]').val(response.product.id).end()
+                                                $('#editProductForm').find('[name="code"]').val(response.product.code).end()
+                                                $('#editProductForm').find('[name="name"]').val(response.product.name).end()
+                                                $('#editProductForm').find('[name="category"]').val(response.product.box).end()
+                                                $('#editProductForm').find('[name="type"]').val(response.product.type).end()
+                                                $('#editProductForm').find('[name="cost"]').val(response.product.cost).end()
+                                                $('#editProductForm').find('[name="price"]').val(response.product.price).end()
+                                                $('#editProductForm').find('[name="unit"]').val(response.product.unit).end()
+                                                $('#editProductForm').find('[name="quantity"]').val(response.product.quantity).end()
+                                                $('#editProductForm').find('[name="details"]').val(response.product.generic).end()
+                                            });
+                                        });
+                                    });
+                        </script>
+                        <script type="text/javascript">
+                            $(document).ready(function () {
+                                $(".load").click(function (e) {
+                                    e.preventDefault(e);
+                                    // Get the record's ID via attribute  
+                                    var iid = $(this).attr('data-id');
+                                    $('#editProductForm').trigger("reset");
+                                    $('#myModal3').modal('show');
+                        
+                                    //  var id = $(this).data('id');
+                        
+                                    // Populate the form fields with the data returned from server
+                                    $('#editProductForm').find('[name="id"]').val(iid).end()
+                                });
+                            });
+                        </script>
+                        <script>
+                            $(document).ready(function () {
+                                $(".flashmessage").delay(3000).fadeOut(100);
+                            });
+                        </script>
+
+<footer class="site-footer">
+        <div class="text-center">
+            2019 &copy;  Inventory Management System  by Salum Jaabir.
+            <a href="#" class="go-top">
+                <i class="fa fa-angle-up"></i>
+            </a>
+        </div>
+    </footer>
+    <!--footer end-->
+    </section>
+<!-- js placed at the end of the document so the pages load faster -->
+
+<script src="jquery.js"></script>
+<script src="jquery-1.8.3.min.js"></script>
+<!----<script src="bootstrap.min.js"></script>-->
+<script src="jquery.scrollTo.min.js"></script>
+<!--
+<script src="common/js/jquery.nicescroll.js" type="text/javascript"></script>
+-->
+<script type="text/javascript" src="jquery.dataTables.js"></script>
+<script type="text/javascript" src="DT_bootstrap.js"></script>
+<script src="common/js/respond.min.js" ></script>
+<script type="text/javascript" src="bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="bootstrap-datetimepicker.js"></script>
+
+
+
+<script type="text/javascript" src="jquery.multi-select.js"></script>
+<script type="text/javascript" src="jquery.quicksearch.js"></script>
+<script type="text/javascript" src="ckeditor.js"></script>
+<script src="advanced-form-components.js"></script>
+<script src="jquery.cookie.js"></script>
+  <!--common script for all pages--> 
+  <script src="common-scripts.js"></script>
+  <script src="jquery.dcjqaccordion.2.7.js"></script>
+  <script src="fullcalendar.min.js"></script>
+  <script src="external-dragging-calendar.js"></script>
+  <!--script for this page only-->
+  <script src="editable-table.js"></script>
+  <!-- END JAVASCRIPTS -->
+  <script>
+    jQuery(document).ready(function () {
+    EditableTable.init();
+    });</script>
+
+<script>
+    $('#calender').fullCalendar()
+</script>
+
+<script>
+            $('.default-date-picker').datepicker({
+        format: 'mm/dd/yyyy'
+
+    });</script>
+
+<script>
+    $('.multi-select').multiSelect({
+    selectableHeader: "<input type='text' class='search-input' autocomplete='off' placeholder=' search...'>",
+            selectionHeader: "<input type='text' class='search-input' autocomplete='off' placeholder=''>",
+            afterInit: function (ms) {
+            var that = this,
+                    $selectableSearch = that.$selectableUl.prev(),
+                    $selectionSearch = that.$selectionUl.prev(),
+                    selectableSearchString = '#' + that.$container.attr('id') + ' .ms-elem-selectable:not(.ms-selected)',
+                    selectionSearchString = '#' + that.$container.attr('id') + ' .ms-elem-selection.ms-selected';
+            that.qs1 = $selectableSearch.quicksearch(selectableSearchString)
+                    .on('keydown', function (e) {
+                    if (e.which === 40) {
+                    that.$selectableUl.focus();
+                    return false;
+                    }
+                    });
+            that.qs2 = $selectionSearch.quicksearch(selectionSearchString)
+                    .on('keydown', function (e) {
+                    if (e.which == 40) {
+                    that.$selectionUl.focus();
+                    return false;
+                    }
+                    });
+            },
+            afterSelect: function () {
+            this.qs1.cache();
+            this.qs2.cache();
+            },
+            afterDeselect: function () {
+            this.qs1.cache();
+            this.qs2.cache();
+            }
+    });</script>
+
+<script>
+    $('#my_multi_select3').multiSelect()
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="img/dollar.jpg">
+  <title>Sale | Inventory Manager</title>
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap-reset.css" rel="stylesheet">
+      <!--external css-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="DT_bootstrap.css" />
+  
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-----------My own links-->
+<link rel="stylesheet" href="mycss.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style-responsive.css">
+<link rel="stylesheet" href="datepicker.css" />
+        <link rel="stylesheet" type="text/css" href="daterangepicker-bs3.css" />
+        <link rel="stylesheet" type="text/css" href="datetimepicker.css" />
+        <link rel="stylesheet" type="text/css" href="multi-select.css" />
+        <link href="invoice-print.css" rel="stylesheet" media="print">
+        <link href="bootstrap-fullcalendar.css" rel="stylesheet">
+<style>
+
+
+ 
+</style>
+</head>
+<body>
+  <section id="container" class="">
+     <!--header start-->
+     <header class="header white-bg">
+        <div class="sidebar-toggle-box">
+            <div data-original-title="Toggle Navigation" data-placement="right" class="fa fa-dedent fa-bars tooltips"></div>
+
+        </div>
+          <!--logo start-->
+          <a href="" class="logo">
+              <strong>CodeNet Inventory Manager                                                                                            </strong> 
+          </a>
+          <!--logo end-->
+          <div class="top-nav ">
+                     
+
+              <ul class="nav pull-right top-menu">
+                  <!-- user login dropdown start-->
+                  <li class="dropdown">
+                      <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                         <!--- <img alt="" src="uploads/favicon.png" width="21" height="23">-->
+                          <i class="fas fa-users"></i>
+                          <span class="username">admin</span>
+                          <b class="caret"></b>
+                      </a>
+                      <ul class="dropdown-menu extended logout">
+                          <div class="log-arrow-up"></div>
+                                                          <li><a href="profile"><i class=" fa fa-suitcase"></i> Profile </a></li>
+                           
+                              <li><a href="settings"><i class="fa fa-cog"></i>  Settings </a></li>
+                          
+                          <li><a><i class="fa fa-user"></i> admin</a></li>
+                          <li><a href="auth/logout"><i class="fa fa-key"></i>  Log Out </a></li>
+                      </ul>
+                  </li>
+                  <!-- user login dropdown end -->
+              </ul>
+          </div>
+     </header>
+     <!--header end-->
+            <!--sidebar start-->
+
+            <!--sidebar start-->
+            <aside>
+                <div id="sidebar"  class="nav-collapse ">
+                    <!-- sidebar menu start-->
+                    <ul class="sidebar-menu" id="nav-accordion">
+                        <li>
+                            <a href="">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span> Dashboard </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="sale/addSaleView">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span> POS </span>
+                            </a>
+                        </li>
+
+
+
+
+
+                        <li class="sub-menu">
+                            <a href="javascript:;" >
+                                <i class="fa  fa-bars"></i>
+                                <span> Product </span>
+                            </a>
+                            <ul class="sub">
+                                <li><a  href="product"><i class="fa fa-bars"></i> Product List </a></li>
+                                <li><a  href="product/addProductView"><i class="fa fa-plus-circle"></i> Add Product </a></li>
+                                <li><a  href="product/productCategory"><i class="fa fa-star"></i> Product Category </a></li>
+                                <li><a  href="product/addCategoryView"><i class="fa fa-plus-circle"></i> Add Category </a></li>
+                            </ul>
+                        </li>
+
+
+                        <li><a  href="purchase"><i class="far fa-money-bill-alt"></i> Purchase </a></li>
+                        <li><a  href="sale"><i class="far fa-money-bill-alt"></i>Sale </a></li>
+                        <li class="sub-menu">
+                            <a href="javascript:;" >
+                                <i class="far fa-money-bill-alt"></i>
+                                <span> Expense </span>
+                            </a>
+                            <ul class="sub">
+
+                                <li><a  href="expense"><i class="far fa-money-bill-alt"></i> Expense </a></li>
+                                <li><a  href="expense/addExpenseView"><i class="far fa-money-bill-alt"></i> Add Expense </a></li>
+                                <li><a  href="expense/addExpensePayment"><i class="far fa-money-bill-alt"></i> Pay </a></li>
+                                <li><a  href="expense/expenseCategory"><i class="fa fa-plus-circle"></i> Category </a></li>
+                                <li><a  href="expense/expenseSubCategory"><i class="fa fa-plus-circle"></i> Sub Category </a></li>
+                            </ul>
+                        </li>
+
+
+
+
+                        <li class="sub-menu">
+                            <a href="javascript:;" >
+                                <i class="fas fa-chart-line"></i>
+                                <span> Report </span>
+                            </a>
+                            <ul class="sub">
+                                <li><a  href="purchase/supplierHistory"><i class="fa fa-user"></i> Supplier Report </a></li>
+                                <li><a  href="sale/clientHistory"><i class="fa fa-user"></i> Client Report </a></li>
+                                <li><a  href="expense/expenseHistory"><i class="far fa-money-bill-alt"></i> Expense Report </a></li>
+                                <li><a  href="product/productHistory"><i class="fa fa-bars"></i> Product Report </a></li>
+                                <li><a  href="home/todayhistory"><i class="fa fa-bars"></i> Today Report </a></li>
+                            </ul>
+                        </li> 
+
+
+
+                                                    
+                              <li class="sub-menu">
+                                <a href="javascript:;" >
+                                    <i class="far fa-money-bill-alt"></i>
+                                    <span> Loan </span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a  href="loan"><i class="fa fa-credit-card"></i> Loan </a></li>
+                                    <li><a  href="loan/loanee"><i class="fa fa-user"></i> Loanee </a></li>
+                                    <li><a  href="loan/lender"><i class="fa fa-user"></i> Lender </a></li>
+
+                                </ul>
+                            </li> 
+
+                            <li class="sub-menu">
+                                <a href="javascript:;" >
+                                    <i class="far fa-money-bill-alt"></i>
+                                    <span> Accounts </span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a  href="finance/capital"><i class="far fa-money-bill-alt"></i> Capital </a></li>
+                                    <li><a  href="loan"><i class="far fa-money-bill-alt"></i>Loan </a></li>
+                                    <li><a  href="finance/cashInBank"><i class="far fa-money-bill-alt"></i> Cash In Bank </a></li>
+                                    <li><a  href="finance/equity"><i class="far fa-money-bill-alt"></i> Equity </a></li>
+                                    <li><a  href="finance/profit"><i class="far fa-money-bill-alt"></i>Profit / Loss </a></li>
+                                </ul>
+                            </li> 
+                        
+                        
+                        
+
+                            <li><a  href="client"><i class="fa fa-user"></i> Client </a></li>
+                            <li><a  href="supplier"><i class="fa fa-user"></i> Supplier </a></li>
+                            <li><a  href="accountant"><i class="fa fa-user"></i> Staff </a></li>
+
+
+                          
+
+
+                            <li>
+                                <a href="settings" >
+                                    <i class="fas fa-cogs"></i>
+                                    <span>  Settings  </span>
+                                </a>
+                            </li>
+                        
+
+
+                        <li>
+                            <a href="profile" >
+                                <i class="fa fa-user"></i>
+                                <span>  Profile  </span>
+                            </a>
+                        </li>
+
+                        <!--multi level menu start-->
+
+                        <!--multi level menu end-->
+
+                    </ul>
+                    <!-- sidebar menu end-->
+                </div>
+            </aside>
+            <!--sidebar end-->
+
+<!--sidebar end-->
+<!--main content start-->
+<section id="main-content"> 
+    <section class="wrapper site-min-height">
+        <!-- page start-->
+        <section class="">
+            <header class="panel-heading">
+
+                <i class="fa fa-edit"></i> Edit Sale                
+                 <a class="btn btn-xs export green today mybtn" id="flowwww" href="sale/todaySale">  Sales Today </a>
+
+                 
+                    
+
+            </header>
+            <div class="">
+                <div class="adv-table editable-table ">
+                    <div class="clearfix">
+                        <!--  <div class="col-lg-12"> -->
+                        <div class="">
+                           <!--   <section class="panel"> -->
+                            <section class="">
+                                <!--   <div class="panel-body"> -->
+                                <div class="">
+                                    <style> 
+                                        .sale{
+                                            padding-top: 0px;
+                                            padding-bottom: 20px;
+                                            border: none;
+
+                                        }
+                                        .pad_bot{
+                                            padding-bottom: 10px;
+                                        }  
+
+                                        form{
+                                            border: 1px solid #ccc;
+                                          //  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+                                            background: transparent;
+                                        }
+                                        .pos{
+                                            padding-left:0px;
+                                        }
+                                        .form-control{
+                                            font-size: 14px;
+                                            font-weight: 600;
+                                            border-radius: 0px;
+                                        }
+                                    </style>
+
+                                    <form role="form" class="clearfix pos form1 fomu"  id="editSaleForm" action="sale/addSale" method="post" enctype="multipart/form-data">
+                                        <div class="col-md-6" id="mustfloat">     
+                                                                                            <div class="col-md-8 sale pad_bot">
+                                                    <div class="col-md-3 sale_label divleft"> 
+                                                        <label for="exampleInputEmail1">  Invoice Id :</label>
+                                                    </div>
+                                                    <div class="col-md-6">                                                   
+                                                        001350                                                                                                       
+                                                    </div>                                              
+                                                </div>                                           
+                                            
+                                            <div class="form-group editme">
+                                                <div class="col-md-2 sale_label divleft">
+                                                    <label class="" for="exampleInputEmail1"> Client</label>
+                                                </div>
+                                                <div class="col-md-6 sale_label divright">
+                                                    <select class="form-control m-bot15" name="client" value=''>
+                                                                                                                    <option value="291" selected > aks hg </option>
+                                                                                                                            <option value="290"  > Arslan </option>
+                                                                                                                            <option value="289"  > Ulomi </option>
+                                                                                                                            <option value="288"  > santhosh400a </option>
+                                                                                                                            <option value="287"  > Salum </option>
+                                                                                                                            <option value="286"  > haron </option>
+                                                                                                                            <option value="285"  > Bharath </option>
+                                                                                                                            <option value="284"  > MR XYZ </option>
+                                                                                                                            <option value="282"  > Swapnil Thakkar </option>
+                                                                                                                            <option value="281"  > deneme </option>
+                                                                                                                            <option value="280"  > contact@prix2gros.tn </option>
+                                                                                                                            <option value="279"  > dhisfjo gjpog </option>
+                                                                                                                            <option value="278"  > Santosh Kumar </option>
+                                                                                                                            <option value="275"  > Khan sdk </option>
+                                                                                                                            <option value="274"  > TING YEW CHUN </option>
+                                                                                                                            <option value="272"  > Arham Shahzad </option>
+                                                                                                                            <option value="267"  > Tipu Sultan </option>
+                                                                                                                            <option value="266"  > Saleem Store </option>
+                                                                                                                            <option value="265"  > satyam </option>
+                                                                                                                            <option value="263"  > dineshj  </option>
+                                                                                                                            <option value="262"  > RIZWAN </option>
+                                                                                                                            <option value="261"  > Al Maida Protien Farm </option>
+                                                                                                                            <option value="260"  > Event company 123 </option>
+                                                                                                                            <option value="259"  > ghnhn </option>
+                                                                                                                            <option value="257"  > SARUL </option>
+                                                                                                                            <option value="256"  > mwwwwww </option>
+                                                                                                                            <option value="255"  > antonio </option>
+                                                                                                                            <option value="254"  > testtt </option>
+                                                                                                                            <option value="253"  > CASH IN </option>
+                                                                                                                            <option value="252"  > Mohit </option>
+                                                                                                                            <option value="250"  > crisp food  </option>
+                                                                                                                            <option value="249"  > ewrewrew </option>
+                                                                                                                            <option value="248"  > ddfsd </option>
+                                                                                                                            <option value="247"  > Testq2w1 </option>
+                                                                                                                            <option value="245"  > Raqib </option>
+                                                                                                                            <option value="244"  > index.html </option>
+                                                                                                                            <option value="243"  > pankaj </option>
+                                                                                                                            <option value="242"  > kecoa </option>
+                                                                                                                            <option value="241"  > Marko Markovic </option>
+                                                                                                                            <option value="240"  > Cliente Contado </option>
+                                                                                                                            <option value="239"  > Malaya </option>
+                                                                                                                            <option value="238"  > Juan Perez </option>
+                                                                                                                            <option value="236"  > Mosol </option>
+                                                                                                                            <option value="235"  > new715web@gmail.com </option>
+                                                                                                                            <option value="234"  > tttttttt </option>
+                                                                                                                            <option value="233"  > احمد ابراهيم </option>
+                                                                                                                            <option value="232"  > محمد احمد نجاح </option>
+                                                                                                                            <option value="231"  > احمد محمد العجمي </option>
+                                                                                                                            <option value="230"  > mohamed </option>
+                                                                                                                            <option value="229"  > Tolu Ogunjimi </option>
+                                                                                                                            <option value="228"  > md shahin </option>
+                                                                                                                            <option value="227"  > md sohel </option>
+                                                                                                                            <option value="226"  > মো সহেল </option>
+                                                                                                                            <option value="225"  > shan anwar </option>
+                                                                                                                            <option value="224"  > CHIFN RO SINH </option>
+                                                                                                                            <option value="223"  > SUSHIL </option>
+                                                                                                                            <option value="220"  > ewrwefewf </option>
+                                                                                                                            <option value="219"  > 23432 </option>
+                                                                                                                            <option value="218"  > ARIF SALIM </option>
+                                                                                                                            <option value="216"  > BCA09990 </option>
+                                                                                                                            <option value="215"  > Jose Rondon </option>
+                                                                                                                            <option value="214"  > Reliance </option>
+                                                                                                                            <option value="213"  > Shmal </option>
+                                                                                                                            <option value="212"  > nawjesh </option>
+                                                                                                                            <option value="211"  > Bin Laden </option>
+                                                                                                                            <option value="210"  > Ali Raza </option>
+                                                                                                                            <option value="209"  > nitinbalasaheb </option>
+                                                                                                                            <option value="208"  > rishikesh </option>
+                                                                                                                            <option value="207"  > amarpreet </option>
+                                                                                                                            <option value="206"  > Rahul </option>
+                                                                                                                            <option value="205"  > 長空－台灣 </option>
+                                                                                                                            <option value="204"  > kkw  TW </option>
+                                                                                                                            <option value="203"  > new2017 </option>
+                                                                                                                            <option value="202"  > rajesh </option>
+                                                                                                                            <option value="201"  > mr cat </option>
+                                                                                                                            <option value="200"  > gfjhgfj </option>
+                                                                                                                            <option value="199"  > sdfgsdsdxdfsdfsdf </option>
+                                                                 
+                                                    </select>
+                                                </div>
+
+                                                <div class="clearfix col-md-4 floatright">
+                                                    <a data-toggle="modal" class="btn btn-xs addSale mybtn" href="#myModal">
+                                                        <div class="btn-group">  
+                                                            <i class="fa fa-plus-circle"></i>  Add Client         
+                                                        </div>
+                                                    </a>  
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-8 sale" id="blockpro">
+                                                <div class="form-group last">
+                                                    <div class="col-md-3 sale_label fltleft"> 
+                                                        <label for="exampleInputEmail1"> Select Item</label>
+                                                    </div>
+                                                    <div class="col-md-9 fltright">
+                                                        <select name="category_name[]" id="" class="multi-select" multiple="" id="my_multi_select3" >
+                                                                                                                            <option class="ooppttiioonn" data-id="242"  data-m_name = "SHIRT" value="242"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    SHIRT                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="241"  data-m_name = "sssssss" value="241"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    sssssss                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="240"  data-m_name = "Pocha garmans" value="240"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Pocha garmans                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="239"  data-m_name = "Ent" value="239"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Ent                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="238"  data-m_name = "asd" value="238"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    asd                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="237"  data-m_name = "Şırdan" value="237"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Şırdan                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="236"  data-m_name = "Şırdan" value="236"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Şırdan                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="234"  data-m_name = "Ø216x25 boru p235gh" value="234"
+                                                                data-qtity=1
+
+                                                                        data-price=330000
+
+
+                                                                        selected                                                                        >
+
+                                                                    Ø216x25 boru p235gh                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="233"  data-m_name = "Test" value="233"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Test                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="232"  data-m_name = "HP ELITEBOOK 2570p" value="232"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    HP ELITEBOOK 2570p                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="231"  data-m_name = "diap" value="231"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    diap                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="229"  data-m_name = "fsdf" value="229"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    fsdf                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="224"  data-m_name = "PRUEBA" value="224"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    PRUEBA                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="223"  data-m_name = "ÓLEO DIESEL" value="223"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    ÓLEO DIESEL                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="222"  data-m_name = "TV NAS" value="222"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    TV NAS                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="221"  data-m_name = "GAXETA" value="221"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    GAXETA                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="218"  data-m_name = "Rajabogam 05Kg" value="218"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Rajabogam 05Kg                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="217"  data-m_name = "Rajabogam 10Kg" value="217"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Rajabogam 10Kg                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="216"  data-m_name = "Rajabogam 25Kg" value="216"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Rajabogam 25Kg                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="214"  data-m_name = "Rajabogam (o) 25Kg" value="214"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Rajabogam (o) 25Kg                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="213"  data-m_name = "Rajabogam IO 25Kg" value="213"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Rajabogam IO 25Kg                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="212"  data-m_name = "Rajabogam New Blue 25Kg" value="212"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Rajabogam New Blue 25Kg                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="211"  data-m_name = "Bagubali BPT 25Kg " value="211"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Bagubali BPT 25Kg                                                                 </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="210"  data-m_name = "Spl Idlykar 01Kg" value="210"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Spl Idlykar 01Kg                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="209"  data-m_name = "Spl Idlykar 05" value="209"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Spl Idlykar 05                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="207"  data-m_name = "Spl Idlykar 10Kg" value="207"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Spl Idlykar 10Kg                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="206"  data-m_name = "Spl Idlykar 25Kg" value="206"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Spl Idlykar 25Kg                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="205"  data-m_name = "Kranthikar 01Kg" value="205"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Kranthikar 01Kg                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="204"  data-m_name = "Kranthikar 05Kg" value="204"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Kranthikar 05Kg                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="201"  data-m_name = "Kranthikar 10Kg" value="201"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Kranthikar 10Kg                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="200"  data-m_name = "Kranthikar 25Kg" value="200"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Kranthikar 25Kg                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="199"  data-m_name = "Gramiyam IR20 01Kg" value="199"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Gramiyam IR20 01Kg                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="197"  data-m_name = "Gramiyam IR20 05Kg" value="197"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Gramiyam IR20 05Kg                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="196"  data-m_name = "Gramiyam IR20 10Kg" value="196"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Gramiyam IR20 10Kg                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="195"  data-m_name = "Gramiyam IR20 25Kg" value="195"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Gramiyam IR20 25Kg                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="192"  data-m_name = "C-Force" value="192"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    C-Force                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="191"  data-m_name = "Lisovit" value="191"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Lisovit                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="189"  data-m_name = "Jucie" value="189"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Jucie                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="186"  data-m_name = "aaaa" value="186"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    aaaa                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="185"  data-m_name = "Olivie Power 30x, 250ml" value="185"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Olivie Power 30x, 250ml                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="184"  data-m_name = "Beauty Products" value="184"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Beauty Products                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="183"  data-m_name = "fgsg" value="183"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    fgsg                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="182"  data-m_name = "Carlos" value="182"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Carlos                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="179"  data-m_name = "Stavic-SDR1000" value="179"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Stavic-SDR1000                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="178"  data-m_name = "Home Power" value="178"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Home Power                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="177"  data-m_name = "HOMEAGE (1012)`" value="177"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    HOMEAGE (1012)`                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="175"  data-m_name = "ertgey" value="175"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    ertgey                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="174"  data-m_name = "Inverex" value="174"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Inverex                                                                </option>
+                                                                                                                            <option class="ooppttiioonn" data-id="159"  data-m_name = "Cabbage" value="159"
+                                                                
+
+                                                                        
+
+
+                                                                                                                                                >
+
+                                                                    Cabbage                                                                </option>
+                                                                                                                    </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 qfloww flowwww">
+                                                <p class="btn btn-xs green mybtn"  id="flowwww" style="margin-bottom: 20px;">Selected Items</p>    
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="col-md-6" id="justfloat">
+                                            <div class="col-md-12 sale right-six">
+                                                <div class="col-md-3 sale_label subright"> 
+                                                    <label for="exampleInputEmail1"> Sub Total</label>
+                                                </div>
+                                                <div class="col-md-9 subleft subtot"> 
+                                                    <input type="text" class="form-control pay_in" name="subtotal" id="subtotal" value='330000' placeholder=" " disabled>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-12 sale right-six  dismarg">
+                                                <div class="col-md-3 sale_label subright"> 
+                                                    <label for="exampleInputEmail1"> Discount </label>
+                                                </div>
+                                                <div class="col-md-9 subleft"> 
+                                                    <input type="text" class="form-control pay_in" name="discount" id="dis_id" value='' placeholder="Discount">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12 sale right-six  dismarg" id="grossdiss">
+                                                <div class="col-md-3 sale_label subright"> 
+                                                    <label for="exampleInputEmail1"> Gross Total</label>
+                                                </div>
+                                                <div class="col-md-9 subleft  grossin"> 
+                                                    <input type="text" class="form-control pay_in" name="grsss" id="gross" value='330000' placeholder=" " disabled>
+                                                </div>
+
+                                            </div>
+
+
+                                            <!--
+                                            <div class="col-md-12 sale">
+                                                <div class="col-md-3 sale_label"> 
+                                                  <label for="exampleInputEmail1">Vat (%)</label>
+                                                </div>
+                                                <div class="col-md-9"> 
+                                                  <input type="text" class="form-control pay_in" name="vat" id="exampleInputEmail1" value='' placeholder="%">
+                                                </div>
+                                            </div>
+                                            -->
+
+                                            <input type="hidden" name="id" value='1350'>
+
+
+                                            <input type="hidden" name="type" value=''>
+
+
+                                            <div class="row">
+                                            </div>
+                                            <div class="form-group">
+                                            </div>
+
+
+                                            <div class="col-md-12 sale right-six  dismarg">
+                                                <div class="col-md-3 sale_label subright"> 
+                                                    <label for="exampleInputEmail1"> Ref. No</label>
+                                                </div>
+                                                <div class="col-md-9 subleft"> 
+                                                    <input type="text" class="form-control pay_in" name="reference" id="" value='' placeholder="">
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-12 sale right-six  dismarg">
+                                                <div class="col-md-3 sale_label subright"> 
+                                                    <label for="exampleInputEmail1"> Date</label>
+                                                </div>
+                                                <div class="col-md-9 subleft"> 
+                                                    <input type="text" class="form-control pay_in default-date-picker" name="date" id="" value='04/08/2019' placeholder="">
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-12 sale right-six  dismarg">
+                                                <div class="col-md-3 sale_label subright"> 
+                                                    <label for="exampleInputEmail1"> Sale Status </label>
+                                                </div>
+                                                <div class="col-md-9 subleft"> 
+                                                    <select id="paid_by" class="form-control m-bot15" name="sale_status" value=''>
+                                                        <option value="delivered">Delivered </option>
+                                                        <option value="ordered">Ordered </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12 sale right-six  dismiss">
+                                                <div class="col-md-12">
+                                                    <div class="col-md-3 batanileft"> 
+                                                    </div>  
+                                                    <div class="col-md-6 bataniright"> 
+                                                        <button type="submit" name="submit" class="btn btn-info batani"> Submit</button>
+                                                    </div>
+                                                    <div class="col-md-3"> 
+                                                    </div> 
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+                                    </form> 
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </section>
+</section>
+<!--main content end-->
+<!--footer start-->
+
+<!-- page end--><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+<style>
+
+    .remove{
+        margin-bottom: 20px;
+        width:40px
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        var tot = 0;
+        $(".ms-selected").click(function () {
+            var id = $(this).data('id');
+            $('#id-div' + id).remove();
+            $('#idinput-' + id).remove();
+            $('#mediidinput-' + id).remove();
+            $('#priceInput-' + id).remove();
+
+        });
+
+
+        $.each($('select.multi-select option:selected'), function () {
+            var unit_price = $(this).data('price');
+            var id = $(this).data('id');
+            var qtity = $(this).data('qtity');
+            if ($('#idinput-' + id).length)
+            {
+
+            } else {
+                if ($('#id-div' + id).length)
+                {
+
+                } else {
+
+                    $("#editSaleForm .qfloww").append('<div class="remove1 divscript" id="id-div' + id + '"> <div class="name col-md-4">Name: ' + $(this).data("m_name") + '</div><div class="price y' + id + ' col-md-3">Price / Kg:</div><div class="quantity x' + id + ' col-md-3">Quantity:</div>')
+                }
+                var input2 = $('<input>').attr({
+                    type: 'text',
+                    class: "remove",
+                    id: 'idinput-' + id,
+                    name: 'quantity[]',
+                    value: qtity,
+                }).appendTo('#editSaleForm .x' + id + '');
+
+                $('<input>').attr({
+                    type: 'hidden',
+                    class: "remove",
+                    id: 'mediidinput-' + id,
+                    name: 'product_id[]',
+                    value: id,
+                }).appendTo('#editSaleForm .qfloww');
+
+                var input3 = $('<input>').attr({
+                    type: 'text',
+                    class: "remove",
+                    id: 'priceInput-' + id,
+                    name: 'price[]',
+                    value: unit_price,
+                }).appendTo('#editSaleForm .y' + id + '');
+            }
+            $(document).ready(function () {
+                $('#idinput-' + id).keyup(function () {
+                    var qty = 0;
+                    var price = 0;
+                    var total = 0;
+                    $.each($('select.multi-select option:selected'), function () {
+                        var id1 = $(this).data('id');
+                        qty = $('#idinput-' + id1).val();
+                        price = $('#priceInput-' + id1).val();
+                        var ekokk = $(this).data('s_price');
+                        total = total + qty * price;
+                    });
+
+                    tot = total;
+
+                    var discount = $('#dis_id').val();
+                    var gross = tot - discount;
+                    $('#editSaleForm').find('[name="subtotal"]').val(tot).end()
+                    $('#editSaleForm').find('[name="grsss"]').val(gross)
+                });
+
+
+                $('#priceInput-' + id).keyup(function () {
+                    var qty = 0;
+                    var price = 0;
+                    var total = 0;
+                    $.each($('select.multi-select option:selected'), function () {
+                        var id1 = $(this).data('id');
+                        qty = $('#idinput-' + id1).val();
+                        price = $('#priceInput-' + id1).val();
+                        var ekokk = $(this).data('s_price');
+                        total = total + qty * price;
+                    });
+
+                    tot = total;
+
+                    var discount = $('#dis_id').val();
+                    var gross = tot - discount;
+                    $('#editSaleForm').find('[name="subtotal"]').val(tot).end()
+                    $('#editSaleForm').find('[name="grsss"]').val(gross)
+                });
+            });
+            var curr_val = $('#priceInput-' + id).val() * $('#idinput-' + id).val();
+            tot = tot + curr_val;
+        });
+        var discount = $('#dis_id').val();
+        var gross = tot - discount;
+        $('#editSaleForm').find('[name="subtotal"]').val(tot).end()
+        $('#editSaleForm').find('[name="grsss"]').val(gross)
+        //  });
+    });
+    $(document).ready(function () {
+        $('#dis_id').keyup(function () {
+            var val_dis = 0;
+            var amount = 0;
+            var ggggg = 0;
+            amount = $('#subtotal').val();
+            val_dis = this.value;
+            ggggg = amount - val_dis;
+            $('#editSaleForm').find('[name="grsss"]').val(ggggg)
+        });
+    });
+
+</script> 
+
+
+
+<script>
+    $(document).ready(function () {
+        $('.multi-select').change(function () {
+            var tot = 0;
+            $(".ms-selected").click(function () {
+                var id = $(this).data('id');
+                $('#id-div' + id).remove();
+                $('#idinput-' + id).remove();
+                $('#mediidinput-' + id).remove();
+                $('#priceInput-' + id).remove();
+
+            });
+            $.each($('select.multi-select option:selected'), function () {
+
+                var id = $(this).data('id');
+                var unit_price = $(this).data('price');
+                if ($('#idinput-' + id).length)
+                {
+
+                } else {
+                    if ($('#id-div' + id).length)
+                    {
+
+                    } else {
+
+                        $("#editSaleForm .qfloww").append('<div class="remove1 divscript" id="id-div' + id + '"> <div class="name col-md-4">Name: ' + $(this).data("m_name") + '</div><div class="price y' + id + ' col-md-3">Price / Kg:</div><div class="quantity x' + id + ' col-md-3">Quantity:</div>')
+                    }
+                    var input2 = $('<input>').attr({
+                        type: 'text',
+                        class: "remove",
+                        id: 'idinput-' + id,
+                        name: 'quantity[]',
+                        value: 1,
+                    }).appendTo('#editSaleForm .x' + id + '');
+
+                    $('<input>').attr({
+                        type: 'hidden',
+                        class: "remove",
+                        id: 'mediidinput-' + id,
+                        name: 'product_id[]',
+                        value: id,
+                    }).appendTo('#editSaleForm .qfloww');
+
+                    var input3 = $('<input>').attr({
+                        type: 'text',
+                        class: "remove",
+                        id: 'priceInput-' + id,
+                        name: 'price[]',
+                        value: unit_price,
+                    }).appendTo('#editSaleForm .y' + id + '');
+
+                }
+
+                $(document).ready(function () {
+                    $('#idinput-' + id).keyup(function () {
+                        var qty = 0;
+                        var price = 0;
+                        var total = 0;
+                        $.each($('select.multi-select option:selected'), function () {
+                            var id1 = $(this).data('id');
+                            qty = $('#idinput-' + id1).val();
+                            price = $('#priceInput-' + id1).val();
+                            var ekokk = $(this).data('s_price');
+                            total = total + qty * price;
+                        });
+
+                        tot = total;
+
+                        var discount = $('#dis_id').val();
+                        var gross = tot - discount;
+                        $('#editSaleForm').find('[name="subtotal"]').val(tot).end()
+                        $('#editSaleForm').find('[name="grsss"]').val(gross)
+                    });
+
+
+                    $('#priceInput-' + id).keyup(function () {
+                        var qty = 0;
+                        var price = 0;
+                        var total = 0;
+                        $.each($('select.multi-select option:selected'), function () {
+                            var id1 = $(this).data('id');
+                            qty = $('#idinput-' + id1).val();
+                            price = $('#priceInput-' + id1).val();
+                            var ekokk = $(this).data('s_price');
+                            total = total + qty * price;
+                        });
+
+                        tot = total;
+
+                        var discount = $('#dis_id').val();
+                        var gross = tot - discount;
+                        $('#editSaleForm').find('[name="subtotal"]').val(tot).end()
+                        $('#editSaleForm').find('[name="grsss"]').val(gross)
+                    });
+                });
+
+
+
+
+
+                var curr_val = $('#priceInput-' + id).val() * $('#idinput-' + id).val();
+                tot = tot + curr_val;
+
+            });
+            var discount = $('#dis_id').val();
+            var gross = tot - discount;
+            $('#editSaleForm').find('[name="subtotal"]').val(tot).end()
+            $('#editSaleForm').find('[name="grsss"]').val(gross)
+        });
+    });
+    $(document).ready(function () {
+        $('#dis_id').keyup(function () {
+            var val_dis = 0;
+            var amount = 0;
+            var ggggg = 0;
+            amount = $('#subtotal').val();
+            val_dis = this.value;
+            ggggg = amount - val_dis;
+            $('#editSaleForm').find('[name="grsss"]').val(ggggg)
+        });
+    });
+
+</script> 
+
+<script>
+    $.ajax({
+        $('#friends').selectpicker('refresh');
+                url: 'client/searchClientByJason', //this returns object data
+        data: 'user_id=' + user_id,
+        type: 'POST',
+        datatype: 'json',
+        success: function (data) { //data = {"0":{"id":1,"name":"Jason"},"1":{"id":2,"name":"Will"},"length":2 }
+            data = JSON.parse(data);
+            var options;
+            for (var i = 0; i < data['length']; i++) {
+                options += "<option value='" + data[i]['id'] + "'>" + data[i]['name'] + "</option>";
+            }
+            $("#friends").append(options);
+        }
+    });
+
+</script>
+
+<!-- Add Client Modal-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title"><i class="fa fa-plus-circle"></i> Client Registration</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form" action="client/addNew?redirect=sale"  class="modal-form" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Name</label>
+                        <input type="text" class="form-control" name="name" id="exampleInputEmail1" value='' placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email</label>
+                        <input type="text" class="form-control" name="email" id="exampleInputEmail1" value='' placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Phone</label>
+                        <input type="text" class="form-control" name="phone" id="exampleInputEmail1" value='' placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Phone</label>
+                        <input type="file" class="form-control" name="img_url" id="exampleInputEmail1" value='' placeholder="">
+                    </div>
+
+                    <input type="hidden" name="from_pos" value='from_pos'>
+
+                    <input type="hidden" name="id" value=''>
+
+                    <section class="">
+                        <button type="submit" name="submit" class="btn btn-info batani">Submit</button>
+                    </section>
+                </form>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+<!-- Add Client Modal-->
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".flashmessage").delay(3000).fadeOut(100);
+    });
+</script>
+
+
+<footer class="site-footer">
+        <div class="text-center">
+            2019 &copy;  Inventory Management System  by Salum Jaabir.
+            <a href="#" class="go-top">
+                <i class="fa fa-angle-up"></i>
+            </a>
+        </div>
+    </footer>
+    <!--footer end-->
+    </section>
+<!-- js placed at the end of the document so the pages load faster -->
+
+<script src="jquery.js"></script>
+<script src="jquery-1.8.3.min.js"></script>
+<!----<script src="bootstrap.min.js"></script>-->
+<script src="jquery.scrollTo.min.js"></script>
+<!--
+<script src="common/js/jquery.nicescroll.js" type="text/javascript"></script>
+-->
+<script type="text/javascript" src="jquery.dataTables.js"></script>
+<script type="text/javascript" src="DT_bootstrap.js"></script>
+<script src="common/js/respond.min.js" ></script>
+<script type="text/javascript" src="bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="bootstrap-datetimepicker.js"></script>
+
+
+
+<script type="text/javascript" src="jquery.multi-select.js"></script>
+<script type="text/javascript" src="jquery.quicksearch.js"></script>
+<script type="text/javascript" src="ckeditor.js"></script>
+<script src="advanced-form-components.js"></script>
+<script src="jquery.cookie.js"></script>
+  <!--common script for all pages--> 
+  <script src="common-scripts.js"></script>
+  <script src="jquery.dcjqaccordion.2.7.js"></script>
+  <script src="fullcalendar.min.js"></script>
+  <script src="external-dragging-calendar.js"></script>
+  <!--script for this page only-->
+  <script src="editable-table.js"></script>
+  <!-- END JAVASCRIPTS -->
+  <script>
+    jQuery(document).ready(function () {
+    EditableTable.init();
+    });</script>
+
+<script>
+    $('#calender').fullCalendar()
+</script>
+
+<script>
+            $('.default-date-picker').datepicker({
+        format: 'mm/dd/yyyy'
+
+    });</script>
+
+<script>
+    $('.multi-select').multiSelect({
+    selectableHeader: "<input type='text' class='search-input' autocomplete='off' placeholder=' search...'>",
+            selectionHeader: "<input type='text' class='search-input' autocomplete='off' placeholder=''>",
+            afterInit: function (ms) {
+            var that = this,
+                    $selectableSearch = that.$selectableUl.prev(),
+                    $selectionSearch = that.$selectionUl.prev(),
+                    selectableSearchString = '#' + that.$container.attr('id') + ' .ms-elem-selectable:not(.ms-selected)',
+                    selectionSearchString = '#' + that.$container.attr('id') + ' .ms-elem-selection.ms-selected';
+            that.qs1 = $selectableSearch.quicksearch(selectableSearchString)
+                    .on('keydown', function (e) {
+                    if (e.which === 40) {
+                    that.$selectableUl.focus();
+                    return false;
+                    }
+                    });
+            that.qs2 = $selectionSearch.quicksearch(selectionSearchString)
+                    .on('keydown', function (e) {
+                    if (e.which == 40) {
+                    that.$selectionUl.focus();
+                    return false;
+                    }
+                    });
+            },
+            afterSelect: function () {
+            this.qs1.cache();
+            this.qs2.cache();
+            },
+            afterDeselect: function () {
+            this.qs1.cache();
+            this.qs2.cache();
+            }
+    });</script>
+
+<script>
+    $('#my_multi_select3').multiSelect()
+</script>
+
+</body>
+</html>
