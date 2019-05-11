@@ -1,0 +1,303 @@
+.sidebar-toggle-box .fa-bars{
+  font-size: 20px;
+  background-color: rgb(14, 73, 14);
+ padding: 5px;
+ padding-left: 15px;
+ padding-right: 15px;
+ margin-bottom: 15px;
+ color: white !important;
+}
+.panel-heading {
+  margin-top: 20px;
+  font-size: 25px;
+  border-top: 1px solid rgb(228, 225, 225);
+  border-right: 1px solid rgb(228, 225, 225);
+  border-left: 1px solid rgb(228, 225, 225);
+  padding: 10px;
+  background-color: rgb(248, 247, 247);
+}
+.medici_name {
+  background-color: rgb(226, 225, 225);
+}
+.mybtn {
+  font-size: 12px;
+  background-color: rgb(248, 241, 241);
+  font-weight: bold;
+  padding: 5px;
+  margin: 2px;
+}
+.today {
+  float: right;
+}
+#justfloat {
+  float: left;
+}
+
+#mustfloat {
+  float: left;
+}
+.divright{
+  float: left;
+}
+.divleft{
+  float: left;
+  
+}
+.floatright {
+  float: left;
+}
+.fomu {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/*.fltright {
+  float: left
+}
+.fltleft {
+  float: left;
+  
+}
+/*.subtoto {
+  float: right;
+  bottom: 440px;
+
+}*/
+.subright {
+  float: left;
+}
+.subleft {
+  float: right;
+}
+.dismarg {
+  margin-top: 40px;
+}
+/*.dismiss {
+  margin-top: 90px;
+  left: 100px;
+}*/
+.subtot input[type=text] {
+  background-color: white;
+}
+.grossin input[type=text] {
+   padding-top: 50px;
+   padding-bottom: 50px;
+   color: white;
+   font-size: 25px;
+   background-color:lightseagreen;
+   font-weight: bold;
+}
+#grossdiss {
+  margin-bottom: 70px;
+}
+.flowwww {
+  background-color:lightseagreen;
+  padding-top: 20px;
+  border-right: 15px solid lightgray;
+  border-bottom: 15px solid lightgray;
+  border-bottom-left-radius: 20px;
+  border-block-end-color: rgb(192, 112, 7);
+}
+#flowwww:hover {
+  color: white;
+  cursor: pointer;
+}
+.batanileft {
+  float: left;
+}
+.bataniright {
+  float: left;
+  margin-top: 50px;
+  margin-left: 100px;
+}
+.batani {
+  border-radius: 0;
+  color: black;
+  background: lightgray;
+  border: none;
+}
+.modal-content {
+  border-radius: 0;
+  padding-bottom: 100px;
+  width: 600px;
+}
+.modal-header {
+  display: inline;
+  border: none;
+  background: lightgray;
+}
+.modal-title {
+  font-size: 18px;
+}
+.modal-form {
+  padding: 20px;
+}
+/*.form-group input[type=text] {
+  padding-bottom: 35px;
+}*/
+.form-group input[type=file] {
+  padding-bottom: 35px;
+}
+.divscript {
+  background: white;
+  margin-bottom: 10px;
+  padding: 30px;
+  padding-right: 10px;
+
+}
+
+.name {
+  float: left;
+  font-weight: bold;
+}
+
+.price {
+  float: left;
+  font-weight: bold;
+}
+
+.quantity {
+  display: inline-block;
+  font-weight: bold;
+}
+.printme {
+  float: right;
+  font-size: 11px;
+  background-color: rgb(248, 241, 241);
+  font-weight: bold;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.addbutton {
+  background-color: rgb(248, 241, 241);
+
+}
+.addbutton:hover {
+  border-radius: 0;
+  color: white !important;
+}
+.printme:hover {
+  color: white !important;
+  border-radius: 0;
+  cursor: pointer;
+}
+.clearnew {
+  margin-top: 10px;
+}
+.thead {
+  background-color: rgb(238, 237, 237);
+}
+.mybtnp {
+  font-size: 7px;
+  background-color: rgb(248, 241, 241);
+  font-weight: bold;
+  padding: 5px;
+}
+#blockpro {
+  display: inline-block;
+}
+.promodal {
+  margin: 20px;
+}
+#adduct {
+  margin-top: 20px;
+}
+.adduct input[type=text], .adduct select{
+  border-radius: 0;
+}
+.printme1 {
+  float: right;
+  font-size: 14px;
+  background-color: rgb(236, 234, 234);
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: white;
+  border-radius: 6px;
+}
+.mybtnc {
+  font-size: 12px;
+  background-color: rgb(248, 241, 241);
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 4px !important;
+}
+#catpro {
+  padding-bottom:200px;
+  padding-top:50px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.categ {
+  background-color: rgb(248, 247, 247);
+  margin-top: 20px;
+  padding: 20px;
+}
+#puchpay {
+  float: left;
+}
+#puchbay {
+  float: left;
+}
+
+.amounts li strong {
+  font-weight: bold;
+}
+.os{
+  background:  rgb(133, 25, 15) !important;
+  color: #fff !important;
+  text-align: center;
+  font-weight: bold;
+}
+.editme {
+  float: right;
+}
+.mybtn2 {
+  font-size: 25px;
+  background-color: teal;
+  font-weight: bold;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 4px !important;
+  color: #fff !important;
+  float: right;
+}
+
+.total_title {
+  display: inline-block;
+  margin: 27px;
+} 
+.total_title p {
+  font-size: 10px;
+  margin-bottom: 4px;
+}
+.payable {
+  background-color: rgb(73, 73, 73);
+  color: #fff;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 40px;
+  border-radius: 7px;
+} 
+.paid {
+  background-color: rgb(73, 73, 73);
+  color: #fff;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 40px;
+  border-radius: 7px;
+}
+.due_payable {
+  background-color: rgb(73, 73, 73);
+  color: #fff;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 40px;
+  border-radius: 7px;
+}
