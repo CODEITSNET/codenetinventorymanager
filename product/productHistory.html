@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="img/dollar.jpg">
+  <title>Product | Inventory Manager</title>
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap-reset.css" rel="stylesheet">
+      <!--external css-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="DT_bootstrap.css" />
+  
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-----------My own links-->
+<link rel="stylesheet" href="mycss.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style-responsive.css">
+<link rel="stylesheet" href="datepicker.css" />
+        <link rel="stylesheet" type="text/css" href="daterangepicker-bs3.css" />
+        <link rel="stylesheet" type="text/css" href="datetimepicker.css" />
+        <link rel="stylesheet" type="text/css" href="multi-select.css" />
+        <link href="invoice-print.css" rel="stylesheet" media="print">
+        <link href="bootstrap-fullcalendar.css" rel="stylesheet">
+<style>
+
+
+ 
+</style>
+</head>
+<body>
+  <section id="container" class="">
+     <!--header start-->
+     <header class="header white-bg">
+        <div class="sidebar-toggle-box">
+            <div data-original-title="Toggle Navigation" data-placement="right" class="fa fa-dedent fa-bars tooltips"></div>
+
+        </div>
+          <!--logo start-->
+          <a href="home" class="logo">
+              <strong>CodeNet Inventory Manager                                                                                            </strong> 
+          </a>
+          <!--logo end-->
+          <div class="top-nav ">
+                     
+
+              <ul class="nav pull-right top-menu">
+                  <!-- user login dropdown start-->
+                  <li class="dropdown">
+                      <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                         <!--- <img alt="" src="uploads/favicon.png" width="21" height="23">-->
+                          <i class="fas fa-users"></i>
+                          <span class="username">admin</span>
+                          <b class="caret"></b>
+                      </a>
+                      <ul class="dropdown-menu extended logout">
+                          <div class="log-arrow-up"></div>
+                                                          <li><a href="profile"><i class=" fa fa-suitcase"></i> Profile </a></li>
+                           
+                              <li><a href="settings"><i class="fa fa-cog"></i>  Settings </a></li>
+                          
+                          <li><a><i class="fa fa-user"></i> admin</a></li>
+                          <li><a href="auth/logout"><i class="fa fa-key"></i>  Log Out </a></li>
+                      </ul>
+                  </li>
+                  <!-- user login dropdown end -->
+              </ul>
+          </div>
+     </header>
+     <!--header end-->
+            <!--sidebar start-->
+
+            <!--sidebar start-->
+            <aside>
+                <div id="sidebar"  class="nav-collapse ">
+                    <!-- sidebar menu start-->
+                    <ul class="sidebar-menu" id="nav-accordion">
+                        <li>
+                            <a href="home">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span> Dashboard </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="sale/addSaleView">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span> POS </span>
+                            </a>
+                        </li>
+
+
+
+
+
+                        <li class="sub-menu">
+                            <a href="javascript:;" >
+                                <i class="fa  fa-bars"></i>
+                                <span> Product </span>
+                            </a>
+                            <ul class="sub">
+                                <li><a  href="product"><i class="fa fa-bars"></i> Product List </a></li>
+                                <li><a  href="product/addProductView"><i class="fa fa-plus-circle"></i> Add Product </a></li>
+                                <li><a  href="product/productCategory"><i class="fa fa-star"></i> Product Category </a></li>
+                                <li><a  href="product/addCategoryView"><i class="fa fa-plus-circle"></i> Add Category </a></li>
+                            </ul>
+                        </li>
+
+
+                        <li><a  href="purchase"><i class="far fa-money-bill-alt"></i> Purchase </a></li>
+                        <li><a  href="sale"><i class="far fa-money-bill-alt"></i>Sale </a></li>
+                        <li class="sub-menu">
+                            <a href="javascript:;" >
+                                <i class="far fa-money-bill-alt"></i>
+                                <span> Expense </span>
+                            </a>
+                            <ul class="sub">
+
+                                <li><a  href="expense"><i class="far fa-money-bill-alt"></i> Expense </a></li>
+                                <li><a  href="expense/addExpenseView"><i class="far fa-money-bill-alt"></i> Add Expense </a></li>
+                                <li><a  href="expense/addExpensePayment"><i class="far fa-money-bill-alt"></i> Pay </a></li>
+                                <li><a  href="expense/expenseCategory"><i class="fa fa-plus-circle"></i> Category </a></li>
+                                <li><a  href="expense/expenseSubCategory"><i class="fa fa-plus-circle"></i> Sub Category </a></li>
+                            </ul>
+                        </li>
+
+
+
+
+                        <li class="sub-menu">
+                            <a href="javascript:;" >
+                                <i class="fas fa-chart-line"></i>
+                                <span> Report </span>
+                            </a>
+                            <ul class="sub">
+                                <li><a  href="purchase/supplierHistory"><i class="fa fa-user"></i> Supplier Report </a></li>
+                                <li><a  href="sale/clientHistory"><i class="fa fa-user"></i> Client Report </a></li>
+                                <li><a  href="expense/expenseHistory"><i class="far fa-money-bill-alt"></i> Expense Report </a></li>
+                                <li><a  href="product/productHistory"><i class="fa fa-bars"></i> Product Report </a></li>
+                                <li><a  href="home/todayhistory"><i class="fa fa-bars"></i> Today Report </a></li>
+                            </ul>
+                        </li> 
+
+
+
+                                                    
+                              <li class="sub-menu">
+                                <a href="javascript:;" >
+                                    <i class="far fa-money-bill-alt"></i>
+                                    <span> Loan </span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a  href="loan"><i class="fa fa-credit-card"></i> Loan </a></li>
+                                    <li><a  href="loan/loanee"><i class="fa fa-user"></i> Loanee </a></li>
+                                    <li><a  href="loan/lender"><i class="fa fa-user"></i> Lender </a></li>
+
+                                </ul>
+                            </li> 
+
+                            <li class="sub-menu">
+                                <a href="javascript:;" >
+                                    <i class="far fa-money-bill-alt"></i>
+                                    <span> Accounts </span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a  href="finance/capital"><i class="far fa-money-bill-alt"></i> Capital </a></li>
+                                    <li><a  href="loan"><i class="far fa-money-bill-alt"></i>Loan </a></li>
+                                    <li><a  href="finance/cashInBank"><i class="far fa-money-bill-alt"></i> Cash In Bank </a></li>
+                                    <li><a  href="finance/equity"><i class="far fa-money-bill-alt"></i> Equity </a></li>
+                                    <li><a  href="finance/profit"><i class="far fa-money-bill-alt"></i>Profit / Loss </a></li>
+                                </ul>
+                            </li> 
+                        
+                        
+                        
+
+                            <li><a  href="client"><i class="fa fa-user"></i> Client </a></li>
+                            <li><a  href="supplier"><i class="fa fa-user"></i> Supplier </a></li>
+                            <li><a  href="accountant"><i class="fa fa-user"></i> Staff </a></li>
+
+
+                          
+
+
+                            <li>
+                                <a href="settings" >
+                                    <i class="fas fa-cogs"></i>
+                                    <span>  Settings  </span>
+                                </a>
+                            </li>
+                        
+
+
+                        <li>
+                            <a href="profile" >
+                                <i class="fa fa-user"></i>
+                                <span>  Profile  </span>
+                            </a>
+                        </li>
+
+                        <!--multi level menu start-->
+
+                        <!--multi level menu end-->
+
+                    </ul>
+                    <!-- sidebar menu end-->
+                </div>
+            </aside>
+            <!--sidebar end-->
+      <!--sidebar end-->
+<!--main content start-->
+<section id="main-content">
+  <section class="wrapper site-min-height">
+      <!-- page start-->
+      <section class="panel">
+          <header class="panel-heading">
+              <i class="fa fa-bars"></i>    Product  Report            </header>
+          <div class="panel-body"> 
+              <div class="adv-table editable-table ">
+                  <div class="clearfix new  clearnew">
+                      <a data-toggle="modal" href="#myModal">
+                          <div class="btn-group">
+                              <button id="" class="btn green addbutton">
+                                  <i class="fa fa-plus-circle"></i>  Add Product                                </button>
+                          </div>
+                      </a>
+                      <button class="export printme1" onclick="javascript:window.print();">Print</button>  
+                  </div>
+                  <div class="space15"></div>
+                  <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                      <thead>
+                          <tr>
+                              <th> Name</th>
+                              <th> Total Purchased</th>
+                              <th> Total Sale</th>
+                              <th> In Stock</th>
+                              <th   class="option_th"> Options</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+
+                      <style>
+
+                          .img_url{
+                              height:20px;
+                              width:20px;
+                              background-size: contain; 
+                              max-height:20px;
+                              border-radius: 100px;
+                          }
+
+                          .load{
+                              float: right !important;
+                          }
+
+                      </style>
+
+                                                  <tr class="">
+                              <td class="">Ø216x25 boru p235gh</td>
+                              <td>12</td>
+                              <td> 0</td>
+                              <td> 12
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=234&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Test</td>
+                              <td>135</td>
+                              <td> 1</td>
+                              <td> 134
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=233&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">HP ELITEBOOK 2570p</td>
+                              <td>123</td>
+                              <td> 3</td>
+                              <td> 120
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=232&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">diap</td>
+                              <td>4200</td>
+                              <td> 14.5</td>
+                              <td> 4185.5
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=231&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">fsdf</td>
+                              <td>0</td>
+                              <td> 0</td>
+                              <td> 
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=229&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">PRUEBA</td>
+                              <td>207</td>
+                              <td> 1</td>
+                              <td> 199
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=224&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">ÓLEO DIESEL</td>
+                              <td>20000</td>
+                              <td> 6963.15</td>
+                              <td> 13012.85
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=223&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">TV NAS</td>
+                              <td>2</td>
+                              <td> 1</td>
+                              <td> 0
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=222&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">GAXETA</td>
+                              <td>202</td>
+                              <td> 19</td>
+                              <td> 169
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=221&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Rajabogam 05Kg</td>
+                              <td>12</td>
+                              <td> 2</td>
+                              <td> 0
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=218&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Rajabogam 10Kg</td>
+                              <td>1121</td>
+                              <td> 48</td>
+                              <td> 1001
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=217&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Rajabogam 25Kg</td>
+                              <td>100</td>
+                              <td> 11</td>
+                              <td> 59
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=216&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Rajabogam (o) 25Kg</td>
+                              <td>30</td>
+                              <td> 8</td>
+                              <td> 4
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=214&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Rajabogam IO 25Kg</td>
+                              <td>0</td>
+                              <td> 0</td>
+                              <td> 
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=213&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Rajabogam New Blue 25Kg</td>
+                              <td>5</td>
+                              <td> 4</td>
+                              <td> 0
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=212&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Bagubali BPT 25Kg </td>
+                              <td>100</td>
+                              <td> 4</td>
+                              <td> 95
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=211&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Spl Idlykar 01Kg</td>
+                              <td>0</td>
+                              <td> 0</td>
+                              <td> 
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=210&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Spl Idlykar 05</td>
+                              <td>0</td>
+                              <td> 12</td>
+                              <td> 0
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=209&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Spl Idlykar 10Kg</td>
+                              <td>600</td>
+                              <td> 3</td>
+                              <td> 573
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=207&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Spl Idlykar 25Kg</td>
+                              <td>200</td>
+                              <td> 76</td>
+                              <td> 94
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=206&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Kranthikar 01Kg</td>
+                              <td>140</td>
+                              <td> 4</td>
+                              <td> 121
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=205&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Kranthikar 05Kg</td>
+                              <td>190</td>
+                              <td> 2</td>
+                              <td> 120
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=204&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Kranthikar 10Kg</td>
+                              <td>0</td>
+                              <td> 30</td>
+                              <td> 0
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=201&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Kranthikar 25Kg</td>
+                              <td>0</td>
+                              <td> 0</td>
+                              <td> 
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=200&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Gramiyam IR20 01Kg</td>
+                              <td>0</td>
+                              <td> 11</td>
+                              <td> 0
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=199&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Gramiyam IR20 05Kg</td>
+                              <td>15</td>
+                              <td> 3</td>
+                              <td> 15
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=197&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Gramiyam IR20 10Kg</td>
+                              <td>0</td>
+                              <td> 1019</td>
+                              <td> 0
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=196&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Gramiyam IR20 25Kg</td>
+                              <td>0</td>
+                              <td> 0</td>
+                              <td> 
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=195&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">C-Force</td>
+                              <td>0</td>
+                              <td> 14</td>
+                              <td> 0
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=192&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Lisovit</td>
+                              <td>0</td>
+                              <td> 15</td>
+                              <td> 0
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=191&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Jucie</td>
+                              <td>0</td>
+                              <td> 3</td>
+                              <td> 489
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=189&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">aaaa</td>
+                              <td>0</td>
+                              <td> 0</td>
+                              <td> 0
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=186&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Olivie Power 30x, 250ml</td>
+                              <td>0</td>
+                              <td> 9</td>
+                              <td> 0
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=185&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Beauty Products</td>
+                              <td>0</td>
+                              <td> 34</td>
+                              <td> 1265
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=184&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">fgsg</td>
+                              <td>0</td>
+                              <td> 0</td>
+                              <td> 0
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=183&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Carlos</td>
+                              <td>0</td>
+                              <td> 0</td>
+                              <td> 0
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=182&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Stavic-SDR1000</td>
+                              <td>0</td>
+                              <td> 8</td>
+                              <td> 0
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=179&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Home Power</td>
+                              <td>0</td>
+                              <td> 3</td>
+                              <td> 0
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=178&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">HOMEAGE (1012)`</td>
+                              <td>0</td>
+                              <td> 3</td>
+                              <td> 27
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=177&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">ertgey</td>
+                              <td>0</td>
+                              <td> 0</td>
+                              <td> 
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=175&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Inverex</td>
+                              <td>0</td>
+                              <td> 5</td>
+                              <td> 1
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=174&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                                  <tr class="">
+                              <td class="">Cabbage</td>
+                              <td>0</td>
+                              <td> 2</td>
+                              <td> 0
+                              </td>
+                              <td class="option"> 
+                                  <a class="btn btn-xs green mybtn" href="product/productHistoryDetails?product=159&type="><i class="fa fa-eye"> </i> Details</a>
+                              </td>
+                          </tr>
+                                              </tbody>
+                  </table>
+              </div>
+          </div>
+      </section>
+      <!-- page end-->
+  </section>
+</section>
+<!--main content end-->
+<!--footer start-->
+
+
+<style>
+  .note{
+      padding-left: 0px;
+      padding-right: 0px;
+  }
+
+  #cke_1_contents{
+      height: 88px !important;
+  }
+
+  #cke_2_contents{
+      height: 88px !important;
+  }
+  .modal-body{
+      padding: 0px;
+  }
+
+</style>
+
+
+
+<!-- Add Accountant Modal-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h4 class="modal-title"><i class="fa fa-plus-circle"></i>  Add Product</h4>
+          </div>
+          <div class="modal-body">
+              <form role="form" id="" action="product/addNewProduct" method="post" enctype="multipart/form-data">
+
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label for="exampleInputEmail1"> Product Code</label>
+                          <input type="text" class="form-control" name="code" id="exampleInputEmail1" value='' placeholder="">
+                      </div>
+                      <div class="form-group">
+                          <label for="exampleInputEmail1"> Product Name</label>
+                          <input type="text" class="form-control" name="name" id="exampleInputEmail1" value='' placeholder="">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="exampleInputEmail1"> Product Category</label>
+                          <select class="form-control m-bot15" name="category" value=''>
+                               
+                          </select>
+                      </div>
+                  </div>
+
+                  <div class="col-md-6">
+
+                      <div class="form-group">
+                          <label for="exampleInputEmail1"> Product Cost</label>
+                          <input type="text" class="form-control" name="cost" id="exampleInputEmail1" value='' placeholder="">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="exampleInputEmail1"> Product Price</label>
+                          <input type="text" class="form-control" name="price" id="exampleInputEmail1" value='' placeholder="">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="exampleInputEmail1"> Product Unit</label>
+                          <input type="text" class="form-control" name="unit" id="exampleInputEmail1" value='' placeholder="">
+                      </div>
+
+
+                      
+                  </div>
+
+
+                  <div class="col-md-12"> 
+                      <div class="form-group">
+                          <label class="control-label col-md-3 note">Product Details</label>
+                          <div class="col-md-12 note">
+                              <textarea class="ckeditor form-control" name="details" value="" rows="5"></textarea>
+                          </div>
+                      </div>
+
+
+                      <div class="form-group">
+                          <button type="submit" name="submit" class="btn btn-info"> Submit</button>
+                      </div>
+                  </div>
+
+
+              </form>
+
+          </div>
+      </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+<!-- Add Accountant Modal-->
+
+<!-- Edit Event Modal-->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h4 class="modal-title"><i class="fa fa-edit"></i>  Edit Product</h4>
+          </div>
+          <div class="modal-body">
+              <form role="form" id="editProductForm" action="product/addNewProduct" method="post" enctype="multipart/form-data">
+
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label for="exampleInputEmail1"> Product Code</label>
+                          <input type="text" class="form-control" name="code" id="exampleInputEmail1" value='200' placeholder="">
+                      </div>
+                      <div class="form-group">
+                          <label for="exampleInputEmail1"> Product Name</label>
+                          <input type="text" class="form-control" name="name" id="exampleInputEmail1" value='Cabbage' placeholder="">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="exampleInputEmail1"> Product Category</label>
+                          <select class="form-control m-bot15" name="category" value=''>
+                               
+                          </select>
+                      </div>
+                  </div>
+
+                  <div class="col-md-6">
+
+                      <div class="form-group">
+                          <label for="exampleInputEmail1"> Product Cost</label>
+                          <input type="text" class="form-control" name="cost" id="exampleInputEmail1" value='100' placeholder="">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="exampleInputEmail1"> Product Price</label>
+                          <input type="text" class="form-control" name="price" id="exampleInputEmail1" value='200' placeholder="">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="exampleInputEmail1"> Product Unit</label>
+                          <input type="text" class="form-control" name="unit" id="exampleInputEmail1" value='' placeholder="">
+                      </div>
+
+
+                  </div>
+
+
+                  <div class="col-md-12"> 
+                      <div class="form-group">
+                          <label class="control-label col-md-3 note">Product Details</label>
+                          <div class="col-md-12 note">
+                              <textarea class="ckeditor form-control" name="details" value="" rows="5"></textarea>
+                          </div>
+                      </div>
+
+                      
+                      <input type="hidden" name="id" value='159'>
+                      <div class="form-group">
+                          <button type="submit" name="submit" class="btn btn-info"> Submit</button>
+                      </div>
+                  </div>
+
+
+              </form>
+
+          </div>
+      </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+<!-- Edit Event Modal-->
+
+
+
+
+
+
+
+
+
+<!-- Load Product -->
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h4 class="modal-title"><i class="fa fa-edit"></i>  Load Product</h4>
+          </div>
+          <div class="modal-body">
+              <form role="form" id="editProductForm" action="product/load" method="post" enctype="multipart/form-data">
+
+                  <div class="form-group">
+                      <label for="exampleInputEmail1"> Add Quantity</label>
+                      <input type="text" class="form-control" name="qty" id="exampleInputEmail1" value='' placeholder="">
+                  </div>
+
+                  <input type="hidden" name="id" value=''>
+                  <button type="submit" name="submit" class="btn btn-info"> Submit</button>
+              </form>
+
+          </div>
+      </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+<!-- Load Product -->
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+                                  $(document).ready(function () {
+                                      $(".editbuttonn").click(function (e) {
+                                          e.preventDefault(e);
+                                          // Get the record's ID via attribute  
+                                          var iid = $(this).attr('data-id');
+                                          $('#editProductForm').trigger("reset");
+                                          $('#myModal2').modal('show');
+                                          $.ajax({
+                                              url: 'product/editProductByJason?id=' + iid,
+                                              method: 'GET',
+                                              data: '',
+                                              dataType: 'json',
+                                          }).success(function (response) {
+                                              // Populate the form fields with the data returned from server
+                                              $('#editProductForm').find('[name="id"]').val(response.product.id).end()
+                                              $('#editProductForm').find('[name="code"]').val(response.product.code).end()
+                                              $('#editProductForm').find('[name="name"]').val(response.product.name).end()
+                                              $('#editProductForm').find('[name="category"]').val(response.product.box).end()
+                                              $('#editProductForm').find('[name="type"]').val(response.product.type).end()
+                                              $('#editProductForm').find('[name="cost"]').val(response.product.cost).end()
+                                              $('#editProductForm').find('[name="price"]').val(response.product.price).end()
+                                              $('#editProductForm').find('[name="unit"]').val(response.product.unit).end()
+                                              $('#editProductForm').find('[name="quantity"]').val(response.product.quantity).end()
+                                              $('#editProductForm').find('[name="details"]').val(response.product.generic).end()
+                                          });
+                                      });
+                                  });
+</script>
+<script type="text/javascript">
+  $(document).ready(function () {
+      $(".load").click(function (e) {
+          e.preventDefault(e);
+          // Get the record's ID via attribute  
+          var iid = $(this).attr('data-id');
+          $('#editProductForm').trigger("reset");
+          $('#myModal3').modal('show');
+
+          //  var id = $(this).data('id');
+
+          // Populate the form fields with the data returned from server
+          $('#editProductForm').find('[name="id"]').val(iid).end()
+      });
+  });
+</script>
+<script>
+  $(document).ready(function () {
+      $(".flashmessage").delay(3000).fadeOut(100);
+  });
+</script>
+
+
+
+<footer class="site-footer">
+        <div class="text-center">
+            2019 &copy;  Inventory Management System  by Salum Jaabir.
+            <a href="https://codenetinventorymanager.netlify.com/product#" class="go-top">
+                <i class="fa fa-angle-up"></i>
+            </a>
+        </div>
+    </footer>
+    <!--footer end-->
+    </section>
+<!-- js placed at the end of the document so the pages load faster -->
+
+<script src="jquery.js"></script>
+<script src="jquery-1.8.3.min.js"></script>
+<!----<script src="bootstrap.min.js"></script>-->
+<script src="jquery.scrollTo.min.js"></script>
+<!--
+<script src="common/js/jquery.nicescroll.js" type="text/javascript"></script>
+-->
+<script type="text/javascript" src="jquery.dataTables.js"></script>
+<script type="text/javascript" src="DT_bootstrap.js"></script>
+<script src="common/js/respond.min.js" ></script>
+<script type="text/javascript" src="bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="bootstrap-datetimepicker.js"></script>
+
+
+
+<script type="text/javascript" src="jquery.multi-select.js"></script>
+<script type="text/javascript" src="jquery.quicksearch.js"></script>
+<script type="text/javascript" src="ckeditor.js"></script>
+<script src="advanced-form-components.js"></script>
+<script src="jquery.cookie.js"></script>
+  <!--common script for all pages--> 
+  <script src="common-scripts.js"></script>
+  <script src="jquery.dcjqaccordion.2.7.js"></script>
+  <script src="fullcalendar.min.js"></script>
+  <script src="external-dragging-calendar.js"></script>
+  <!--script for this page only-->
+  <script src="editable-table.js"></script>
+  <!-- END JAVASCRIPTS -->
+  <script>
+    jQuery(document).ready(function () {
+    EditableTable.init();
+    });</script>
+
+<script>
+    $('#calender').fullCalendar()
+</script>
+
+<script>
+            $('.default-date-picker').datepicker({
+        format: 'mm/dd/yyyy'
+
+    });</script>
+
+<script>
+    $('.multi-select').multiSelect({
+    selectableHeader: "<input type='text' class='search-input' autocomplete='off' placeholder=' search...'>",
+            selectionHeader: "<input type='text' class='search-input' autocomplete='off' placeholder=''>",
+            afterInit: function (ms) {
+            var that = this,
+                    $selectableSearch = that.$selectableUl.prev(),
+                    $selectionSearch = that.$selectionUl.prev(),
+                    selectableSearchString = '#' + that.$container.attr('id') + ' .ms-elem-selectable:not(.ms-selected)',
+                    selectionSearchString = '#' + that.$container.attr('id') + ' .ms-elem-selection.ms-selected';
+            that.qs1 = $selectableSearch.quicksearch(selectableSearchString)
+                    .on('keydown', function (e) {
+                    if (e.which === 40) {
+                    that.$selectableUl.focus();
+                    return false;
+                    }
+                    });
+            that.qs2 = $selectionSearch.quicksearch(selectionSearchString)
+                    .on('keydown', function (e) {
+                    if (e.which == 40) {
+                    that.$selectionUl.focus();
+                    return false;
+                    }
+                    });
+            },
+            afterSelect: function () {
+            this.qs1.cache();
+            this.qs2.cache();
+            },
+            afterDeselect: function () {
+            this.qs1.cache();
+            this.qs2.cache();
+            }
+    });</script>
+
+<script>
+    $('#my_multi_select3').multiSelect()
+</script>
+
+</body>
+</html>
