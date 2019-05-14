@@ -24,6 +24,8 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!--ckeditor-->
+<script src="https://cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>
 
 <!-----------My own links-->
 <link rel="stylesheet" href="mycss.css">
@@ -309,7 +311,12 @@
                           <div class="form-group">
                               <label class="control-label col-md-3 note">Product Details</label>
                       <div class="col-md-12 note">
-                            <textarea class="ckeditor form-control" name="details" value="" rows="5"></textarea></div>
+                            <textarea class="ckeditor form-control" name="details" value="" rows="5"></textarea>
+                            <script>
+                                CKEDITOR.replace( 'details' );
+                        </script>
+            
+                        </div>
                            </div>
                             <input type="hidden" name="id" value=''>
                          <div class="form-group">
