@@ -24,6 +24,8 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!--ckeditor-->
+<script src="https://cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>
 
 <!-----------My own links-->
 <link rel="stylesheet" href="mycss.css">
@@ -444,10 +446,10 @@
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
               <h4 class="modal-title"><i class="fa fa-plus-circle"></i>  Add Payment</h4>
           </div>
-          <div class="modal-body">
-              <form role="form" id="paymentForm" action="payment/addPayment" method="post" enctype="multipart/form-data">
+          <div class="modal-body adduct">
+              <form role="form" id="paymentForm" action="payment/addPayment" method="post" enctype="multipart/form-data" class = "ndani">
 
-                  <div class="col-md-6">
+                  <div class="col-md-6" id="justfloat">
                       <div class="form-group">
                           <label for="exampleInputEmail1"> Ref. No</label>
                           <input type="text" class="form-control" name="reference" id="exampleInputEmail1" value=''>
@@ -460,7 +462,7 @@
                      
                   </div>
 
-                  <div class="col-md-6">
+                  <div class="col-md-6" id = "mustfloat">
                       
                        <div class="form-group">
                           <label for="exampleInputEmail1"> Paid By</label>
@@ -481,7 +483,7 @@
                       <input type="hidden" name="client_id" value='286'>
                   </div>
 
-                  <div class="form-group col-md-12">
+                  <div class="form-group col-md-12" id="blockpro">
                       <div class="form-group" id="cheque_no" style="display: none;">
                           <label for="exampleInputEmail1"> Cheque No.</label>
                           <input type="text" class="form-control" name="cheque_no" id="exampleInputEmail1" value='' placeholder="">
@@ -489,11 +491,14 @@
                       <label class="control-label col-md-3 note">Note</label>
                       <div class="col-md-12 note">
                           <textarea class="ckeditor form-control" name="note" value="" rows="10"></textarea>
+                          <script>
+                            CKEDITOR.replace( 'note' );
+                    </script>   
                       </div>
                   </div>
 
                   <div class="form-group col-md-12">
-                      <button type="submit" name="submit" class="btn btn-info"> Submit </button>
+                      <button type="submit" name="submit" class="btn btn-info batani"> Submit </button>
                   </div>
               </form>
 
