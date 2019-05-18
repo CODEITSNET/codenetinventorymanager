@@ -205,6 +205,9 @@
 .adduct input[type=text], .adduct select{
   border-radius: 0;
 }
+.adduct input[type=password]{
+  border-radius: 0;
+}
 .printme1 {
   float: right;
   font-size: 14px;
